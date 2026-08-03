@@ -1,5 +1,5 @@
 # Meisai official website
-
+<!--
 This folder contains the static, responsive landing site deployed through
 GitHub Pages. It presents Meisai's problems, workflows, features, support,
 and current privacy policy.
@@ -52,3 +52,4 @@ After deployment:
 4. Test the homepage with Google's Rich Results Test.
 5. Request indexing for the homepage, support page, and privacy page.
 6. Add the website and privacy-policy URLs to the Chrome Web Store listing.
+-->
