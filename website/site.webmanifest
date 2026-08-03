@@ -1,0 +1,16 @@
+{
+  "name": "Meisai",
+  "short_name": "Meisai",
+  "description": "An all-in-one productivity workspace to organize tasks, notes, knowledge, focus sessions, and personal growth.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#f8f8ff",
+  "theme_color": "#6855ee",
+  "icons": [
+    {
+      "src": "assets/meisai-logo.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ]
+}
