@@ -1,5 +1,5 @@
 # Meisai official website
-<!--
+
 This folder contains the static, responsive landing site deployed through
 GitHub Pages. It presents Meisai's problems, workflows, features, support,
 and current privacy policy.
@@ -26,15 +26,18 @@ Open `http://localhost:4173`.
 The workflow uses the URL returned by GitHub Pages to generate canonical URLs,
 Open Graph URLs, structured data, `robots.txt`, and `sitemap.xml`.
 
-## Chrome Web Store URL
+## Browser store URLs
 
-After the extension is published, add this GitHub repository variable:
+After each extension listing is published, add these GitHub repository variables:
 
-- Name: `CHROME_WEB_STORE_URL`
-- Value: the public Meisai Chrome Web Store listing URL
+- `CHROME_WEB_STORE_URL`: public Meisai Chrome Web Store listing URL.
+- `EDGE_ADDONS_URL`: public Meisai Microsoft Edge Add-ons listing URL.
+- `BRAVE_EXTENSION_URL`: optional Brave-specific URL. When omitted, the Brave
+  button uses the Chrome Web Store listing because Brave supports Chrome
+  extensions.
 
-Until it is configured, install buttons clearly show **Chrome Web Store —
-Coming soon** and do not point to an unrelated listing.
+Until a URL is configured, its install button clearly shows **Coming soon**
+and does not point to an unrelated listing.
 
 ## Optional deployment variables
 
@@ -51,5 +54,5 @@ After deployment:
 3. Submit `/sitemap.xml`.
 4. Test the homepage with Google's Rich Results Test.
 5. Request indexing for the homepage, support page, and privacy page.
-6. Add the website and privacy-policy URLs to the Chrome Web Store listing.
--->
+6. Add the website and privacy-policy URLs to the Chrome Web Store and
+   Microsoft Edge Add-ons listings.

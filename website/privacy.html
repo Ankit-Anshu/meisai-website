@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Privacy Policy — Meisai</title>
+    <title>Privacy Policy | Meisai</title>
     <meta name="description" content="Learn how Meisai stores and processes user data locally, why browser permissions are used, and how users control their information.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#6855ee">
@@ -23,7 +23,7 @@
         <a class="brand" href="./"><img src="assets/meisai-logo.png" width="42" height="42" alt=""><span>Meisai</span></a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="visually-hidden">Open navigation</span><i></i><i></i><i></i></button>
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav><a href="./#features">Features</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a><a href="./#faq">FAQ</a></nav>
-        <a class="button button--small button--primary nav-cta" href="__STORE_URL__">__STORE_CTA__</a>
+        <a class="button button--small button--primary nav-cta" href="index.html#availability">Get Meisai</a>
       </div>
     </header>
     <main id="main">
@@ -33,15 +33,15 @@
       <div class="container legal-shell">
         <nav class="legal-nav" aria-label="Privacy policy sections"><a href="#overview">Overview</a><a href="#data">Data handled</a><a href="#storage">Storage</a><a href="#network">Network requests</a><a href="#permissions">Permissions</a><a href="#control">User control</a><a href="#security">Security</a><a href="#contact">Contact</a></nav>
         <article class="legal-content">
-          <section id="overview"><h2>Overview</h2><p>Meisai is a Chrome extension for learning, reading, productivity, and career organization. This policy explains what information the current version handles, where it is stored, and how users control it.</p><p class="notice"><strong>Current version:</strong> Meisai does not sell user data, serve advertising, or include third-party analytics.</p></section>
+          <section id="overview"><h2>Overview</h2><p>Meisai is a browser extension for learning, reading, productivity, and career organization on Google Chrome, Microsoft Edge, and Brave. This policy explains what information the current version handles, where it is stored, and how users control it.</p><p class="notice"><strong>Current version:</strong> Meisai does not sell user data, serve advertising, or include third-party analytics.</p></section>
           <section id="data"><h2>Data Meisai handles</h2><p>Depending on the features a user chooses, Meisai may handle:</p><ul><li>A local display name and profile image.</li><li>Notes, tasks, habits, calendar events, countdowns, projects, job applications, interview details, resumes, and learning resources.</li><li>Saved page URLs, readable article content, screenshots, images, links, text, and code.</li><li>Reading progress, highlights, and comment notes.</li><li>A manually selected weather location.</li><li>Optional browser bookmarks or history used locally for command suggestions.</li></ul></section>
-          <section id="storage"><h2>How data is stored</h2><p>Persistent user content is stored locally on the user's device in IndexedDB. Lightweight interface preferences are stored in <code>chrome.storage.local</code>. Meisai does not operate a server that receives this local workspace data.</p></section>
+          <section id="storage"><h2>How data is stored</h2><p>Persistent user content is stored locally on the user's device in IndexedDB. Lightweight interface preferences use the browser's extension storage API, exposed as <code>chrome.storage.local</code> across supported Chromium browsers. Meisai does not operate a server that receives this local workspace data.</p></section>
           <section id="network"><h2>Network requests</h2><p>Meisai makes network requests only for user-facing features. Examples include loading a selected webpage for Reading Mode, opening a saved link, retrieving weather and air-quality data from Open-Meteo, submitting feedback through the published Google Form, or sending a search query to the user's selected search provider. Those services process requests under their own privacy policies.</p></section>
           <section id="permissions"><h2>Browser permissions</h2><p>Supported-page access powers the visible Meisai Helper, user-initiated screenshot and reading actions, and user-configured website blocking. Bookmark and history permissions are optional and requested only when their command-suggestion settings are enabled. Information obtained through these permissions is processed locally for the requested feature.</p><p>See the <a href="support.html#permissions">permission guide</a> for a plain-language explanation of each permission.</p></section>
           <section id="sharing"><h2>Sharing, advertising, and analytics</h2><p>Meisai does not sell user information, share it for advertising, use it for personalized advertising, or include third-party analytics. The developer does not permit humans to read a user's locally stored content.</p></section>
-          <section id="control"><h2>User control and retention</h2><p>Data remains on the user's device until it is edited, deleted, cleared through Meisai's Privacy &amp; Data controls, removed with the extension, or erased by Chrome. Users can export a local backup and restore it later. Notification categories and optional browser-data suggestions can be disabled in Settings.</p></section>
+          <section id="control"><h2>User control and retention</h2><p>Data remains on the user's device until it is edited, deleted, cleared through Meisai's Privacy &amp; Data controls, removed with the extension, or erased by the browser. Users can export a local backup and restore it later. Notification categories and optional browser-data suggestions can be disabled in Settings.</p></section>
           <section id="security"><h2>Security</h2><p>Meisai uses Manifest V3, packages executable code with the extension, validates stored records, and sanitizes supported rich content before rendering. User-requested external connections use HTTPS when the destination supports it.</p></section>
-          <section id="changes"><h2>Changes to this policy</h2><p>Material changes to this policy or Meisai's data practices will be reflected here and in relevant extension or Chrome Web Store disclosures. The effective date at the top of this page will be updated.</p></section>
+          <section id="changes"><h2>Changes to this policy</h2><p>Material changes to this policy or Meisai's data practices will be reflected here and in relevant browser-extension store disclosures. The effective date at the top of this page will be updated.</p></section>
           <section id="contact"><h2>Contact</h2><p>For privacy questions, bug reports, or suggestions, use the <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Meisai feedback form</a> or visit <a href="support.html">Help &amp; Support</a>.</p></section>
         </article>
       </div>

@@ -13,22 +13,28 @@ const repositoryUrl =
   (process.env.GITHUB_REPOSITORY
     ? `https://github.com/${process.env.GITHUB_REPOSITORY}`
     : "https://github.com/");
-const storeUrl = normalizeUrl(process.env.CHROME_WEB_STORE_URL);
+const chromeStoreUrl = normalizeUrl(process.env.CHROME_WEB_STORE_URL);
+const edgeStoreUrl = normalizeUrl(process.env.EDGE_ADDONS_URL);
+const braveStoreUrl = normalizeUrl(process.env.BRAVE_EXTENSION_URL) || chromeStoreUrl;
 const feedbackUrl =
   normalizeUrl(process.env.FEEDBACK_URL) ||
-  "https://docs.google.com/forms/d/e/1FAIpQLSc6N-8Iol-X6HRtiHRKYc14SRGvKaun4Kpl-UzhpuqxrYNgMw/viewform?usp=publish-editor";
+  "https://forms.gle/sGxecwiz6z5R2UNB6";
 
 const replacements = new Map([
   ["__SITE_URL__", siteUrl],
   ["__REPOSITORY_URL__", repositoryUrl],
-  ["__STORE_URL__", storeUrl || "#availability"],
-  ["__STORE_CTA__", storeUrl ? "Add to Chrome" : "Chrome Web Store — Coming soon"],
-  ["__STORE_AVAILABLE__", storeUrl ? "true" : "false"],
+  ["__CHROME_STORE_URL__", chromeStoreUrl || "#availability"],
+  ["__EDGE_STORE_URL__", edgeStoreUrl || "#availability"],
+  ["__BRAVE_STORE_URL__", braveStoreUrl || "#availability"],
+  ["__CHROME_CTA__", chromeStoreUrl ? "Add to Chrome" : "Chrome: Coming soon"],
+  ["__EDGE_CTA__", edgeStoreUrl ? "Add to Edge" : "Edge: Coming soon"],
+  ["__BRAVE_CTA__", braveStoreUrl ? "Add to Brave" : "Brave: Coming soon"],
+  ["__STORE_AVAILABLE__", chromeStoreUrl || edgeStoreUrl ? "true" : "false"],
   [
     "__AVAILABILITY_NOTE__",
-    storeUrl
-      ? "Available for Google Chrome 114 and later."
-      : "The public Chrome Web Store listing link will appear here when publishing is complete.",
+    chromeStoreUrl && edgeStoreUrl
+      ? "Available for Google Chrome, Microsoft Edge, and Brave."
+      : "Chrome Web Store and Microsoft Edge Add-ons links will appear here as each listing is published. Brave installs through the Chrome Web Store.",
   ],
   ["__FEEDBACK_URL__", feedbackUrl],
 ]);
@@ -37,7 +43,8 @@ await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });
 await cp(source, destination, {
   recursive: true,
-  filter: (entry) => !["build.mjs", "README.md"].includes(path.basename(entry)),
+  filter: (entry) =>
+    !["build.mjs", "optimize-videos.mjs", "README.md"].includes(path.basename(entry)),
 });
 
 const textFiles = [
@@ -58,4 +65,6 @@ for (const relative of textFiles) {
 
 console.log(`Built Meisai website at ${destination}`);
 console.log(`Canonical URL: ${siteUrl}`);
-console.log(`Chrome Web Store CTA: ${storeUrl || "coming soon"}`);
+console.log(`Chrome Web Store CTA: ${chromeStoreUrl || "coming soon"}`);
+console.log(`Microsoft Edge Add-ons CTA: ${edgeStoreUrl || "coming soon"}`);
+console.log(`Brave CTA: ${braveStoreUrl || "uses Chrome Web Store when available"}`);
