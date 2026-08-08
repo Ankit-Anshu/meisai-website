@@ -31,7 +31,8 @@ Open Graph URLs, structured data, `robots.txt`, and `sitemap.xml`.
 After each extension listing is published, add these GitHub repository variables:
 
 - `CHROME_WEB_STORE_URL`: public Meisai Chrome Web Store listing URL.
-- `EDGE_ADDONS_URL`: public Meisai Microsoft Edge Add-ons listing URL.
+- `FIREFOX_ADDONS_URL`: optional override for the published Firefox Add-ons
+  listing. The approved Meisai Firefox URL is used by default.
 - `BRAVE_EXTENSION_URL`: optional Brave-specific URL. When omitted, the Brave
   button uses the Chrome Web Store listing because Brave supports Chrome
   extensions.
@@ -55,4 +56,4 @@ After deployment:
 4. Test the homepage with Google's Rich Results Test.
 5. Request indexing for the homepage, support page, and privacy page.
 6. Add the website and privacy-policy URLs to the Chrome Web Store and
-   Microsoft Edge Add-ons listings.
+   Firefox Add-ons listings.

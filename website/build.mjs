@@ -8,13 +8,22 @@ const destination = path.join(projectRoot, "_site");
 const normalizeUrl = (value) => String(value || "").trim().replace(/\/+$/, "");
 
 const siteUrl = normalizeUrl(process.env.SITE_URL) || "http://localhost:4173";
-const repositoryUrl =
-  normalizeUrl(process.env.REPOSITORY_URL) ||
-  (process.env.GITHUB_REPOSITORY
-    ? `https://github.com/${process.env.GITHUB_REPOSITORY}`
-    : "https://github.com/");
+const repositoryUrl = normalizeUrl(
+  process.env.REPOSITORY_URL ||
+    (process.env.GITHUB_REPOSITORY
+      ? `https://github.com/${process.env.GITHUB_REPOSITORY}`
+      : "https://github.com"),
+);
+const hasGitHubRepository =
+  /^https:\/\/github\.com\/[^/]+\/[^/]+$/i.test(repositoryUrl);
+const issuesUrl =
+  hasGitHubRepository
+    ? `${repositoryUrl}/issues/new`
+    : repositoryUrl;
 const chromeStoreUrl = normalizeUrl(process.env.CHROME_WEB_STORE_URL);
-const edgeStoreUrl = normalizeUrl(process.env.EDGE_ADDONS_URL);
+const firefoxStoreUrl =
+  normalizeUrl(process.env.FIREFOX_ADDONS_URL) ||
+  "https://addons.mozilla.org/en-US/firefox/addon/meisai-workspace";
 const braveStoreUrl = normalizeUrl(process.env.BRAVE_EXTENSION_URL) || chromeStoreUrl;
 const feedbackUrl =
   normalizeUrl(process.env.FEEDBACK_URL) ||
@@ -23,18 +32,19 @@ const feedbackUrl =
 const replacements = new Map([
   ["__SITE_URL__", siteUrl],
   ["__REPOSITORY_URL__", repositoryUrl],
+  ["__ISSUES_URL__", issuesUrl],
   ["__CHROME_STORE_URL__", chromeStoreUrl || "#availability"],
-  ["__EDGE_STORE_URL__", edgeStoreUrl || "#availability"],
+  ["__FIREFOX_STORE_URL__", firefoxStoreUrl],
   ["__BRAVE_STORE_URL__", braveStoreUrl || "#availability"],
   ["__CHROME_CTA__", chromeStoreUrl ? "Add to Chrome" : "Chrome: Coming soon"],
-  ["__EDGE_CTA__", edgeStoreUrl ? "Add to Edge" : "Edge: Coming soon"],
+  ["__FIREFOX_CTA__", "Add to Firefox"],
   ["__BRAVE_CTA__", braveStoreUrl ? "Add to Brave" : "Brave: Coming soon"],
-  ["__STORE_AVAILABLE__", chromeStoreUrl || edgeStoreUrl ? "true" : "false"],
+  ["__STORE_AVAILABLE__", "true"],
   [
     "__AVAILABILITY_NOTE__",
-    chromeStoreUrl && edgeStoreUrl
-      ? "Available for Google Chrome, Microsoft Edge, and Brave."
-      : "Chrome Web Store and Microsoft Edge Add-ons links will appear here as each listing is published. Brave installs through the Chrome Web Store.",
+    chromeStoreUrl
+      ? "Available for Firefox, Google Chrome, and Brave."
+      : "Available now for Firefox. Chrome and Brave listings are coming soon.",
   ],
   ["__FEEDBACK_URL__", feedbackUrl],
 ]);
@@ -66,5 +76,5 @@ for (const relative of textFiles) {
 console.log(`Built Meisai website at ${destination}`);
 console.log(`Canonical URL: ${siteUrl}`);
 console.log(`Chrome Web Store CTA: ${chromeStoreUrl || "coming soon"}`);
-console.log(`Microsoft Edge Add-ons CTA: ${edgeStoreUrl || "coming soon"}`);
+console.log(`Firefox Add-ons CTA: ${firefoxStoreUrl}`);
 console.log(`Brave CTA: ${braveStoreUrl || "uses Chrome Web Store when available"}`);
