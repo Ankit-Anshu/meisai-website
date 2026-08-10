@@ -1,11 +1,24 @@
 const header = document.querySelector("[data-site-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const nav = document.querySelector("[data-site-nav]");
+const featureNav = document.querySelector("[data-feature-nav]");
+const featureNavTrigger = document.querySelector("[data-feature-nav-trigger]");
+
+const setFeatureNavigation = (open) => {
+  featureNav?.classList.toggle("is-open", open);
+  featureNavTrigger?.setAttribute("aria-expanded", String(open));
+};
+
+const dismissFeatureNavigation = () => {
+  setFeatureNavigation(false);
+  featureNav?.classList.add("is-dismissed");
+};
 
 const closeNavigation = () => {
   if (!navToggle || !nav) return;
   nav.classList.remove("is-open");
   navToggle.setAttribute("aria-expanded", "false");
+  setFeatureNavigation(false);
 };
 
 navToggle?.addEventListener("click", () => {
@@ -14,14 +27,39 @@ navToggle?.addEventListener("click", () => {
   nav?.classList.toggle("is-open", open);
 });
 
+featureNavTrigger?.addEventListener("click", () => {
+  if (featureNav?.classList.contains("is-open")) {
+    dismissFeatureNavigation();
+    return;
+  }
+  featureNav?.classList.remove("is-dismissed");
+  setFeatureNavigation(true);
+});
+
+featureNavTrigger?.addEventListener("pointerenter", () => {
+  featureNav?.classList.remove("is-dismissed");
+});
+
 nav?.addEventListener("click", (event) => {
-  if (event.target.closest("a")) closeNavigation();
+  const link = event.target.closest("a");
+  if (!link) return;
+  if (link.closest("[data-feature-nav-panel]")) {
+    dismissFeatureNavigation();
+    link.blur();
+  }
+  closeNavigation();
 });
 
 document.addEventListener("click", (event) => {
   if (!event.target.closest("[data-site-nav], [data-nav-toggle]")) {
     closeNavigation();
   }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  dismissFeatureNavigation();
+  featureNavTrigger?.focus();
 });
 
 window.addEventListener(
