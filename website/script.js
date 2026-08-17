@@ -67,64 +67,114 @@ window.addEventListener(
   () => header?.classList.toggle("is-scrolled", window.scrollY > 8),
   { passive: true },
 );
+header?.classList.toggle("is-scrolled", window.scrollY > 8);
 
 for (const year of document.querySelectorAll("[data-current-year]")) {
   year.textContent = String(new Date().getFullYear());
 }
 
-const featureVideos = [...document.querySelectorAll("[data-feature-video]")];
+// Reveal-on-scroll for elements marked [data-reveal].
+const revealTargets = [...document.querySelectorAll("[data-reveal]")];
+if ("IntersectionObserver" in window && revealTargets.length) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    },
+    { rootMargin: "0px 0px -80px 0px", threshold: 0.08 },
+  );
+  for (const target of revealTargets) revealObserver.observe(target);
+} else {
+  for (const target of revealTargets) target.classList.add("is-visible");
+}
 
-const setVideoFallback = (video, visible) => {
-  const button = video.closest("[data-video-shell]")?.querySelector("[data-video-play]");
-  if (button) button.hidden = !visible;
-};
-
-const playVideo = async (video) => {
-  video.muted = true;
-  video.defaultMuted = true;
-  try {
-    await video.play();
-    setVideoFallback(video, false);
-  } catch {
-    setVideoFallback(video, true);
-  }
-};
-
-for (const video of featureVideos) {
-  video.muted = true;
-  video.defaultMuted = true;
-  video.autoplay = true;
-  video.loop = true;
-  video.playsInline = true;
-  video.addEventListener("playing", () => setVideoFallback(video, false));
-  video.addEventListener("error", () => setVideoFallback(video, true));
-  video.addEventListener("canplay", () => {
-    const bounds = video.getBoundingClientRect();
-    if (bounds.bottom >= -160 && bounds.top <= window.innerHeight + 160) {
-      void playVideo(video);
+// Only one FAQ entry open at a time.
+const faqItems = [...document.querySelectorAll(".faq-item")];
+for (const item of faqItems) {
+  item.addEventListener("toggle", () => {
+    if (!item.open) return;
+    for (const other of faqItems) {
+      if (other !== item) other.open = false;
     }
-  });
-  video.closest("[data-video-shell]")?.querySelector("[data-video-play]")?.addEventListener("click", () => {
-    void playVideo(video);
   });
 }
 
-if ("IntersectionObserver" in window) {
-  const videoObserver = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          void playVideo(video);
-        } else {
-          video.pause();
-        }
-      }
-    },
-    { rootMargin: "160px 0px", threshold: 0.12 },
-  );
+// Fanned product-demo carousel ("deck"): cards arranged around an active
+// slide, auto-advancing, with manual prev/next/play controls and click-to-jump.
+const deck = document.querySelector("[data-deck]");
+if (deck) {
+  const cards = [...deck.querySelectorAll("[data-deck-card]")];
+  const prevBtn = deck.querySelector("[data-deck-prev]");
+  const nextBtn = deck.querySelector("[data-deck-next]");
+  const playBtn = deck.querySelector("[data-deck-play]");
+  const iconPause = deck.querySelector("[data-deck-icon-pause]");
+  const iconPlay = deck.querySelector("[data-deck-icon-play]");
+  const indexEl = deck.querySelector("[data-deck-index]");
+  const captionEl = deck.querySelector("[data-deck-caption]");
+  const total = cards.length;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const VISIBLE_SPAN = 2;
+  const AUTOPLAY_MS = 3200;
 
-  for (const video of featureVideos) videoObserver.observe(video);
-} else {
-  for (const video of featureVideos) void playVideo(video);
+  let active = 0;
+  let playing = !prefersReducedMotion;
+  let timer = null;
+
+  const render = () => {
+    cards.forEach((card, i) => {
+      let rel = i - active;
+      if (rel > total / 2) rel -= total;
+      if (rel < -total / 2) rel += total;
+      const abs = Math.abs(rel);
+      card.style.setProperty("--rel", String(rel));
+      card.style.setProperty("--abs", String(Math.min(abs, VISIBLE_SPAN + 1)));
+      card.classList.toggle("is-hidden", abs > VISIBLE_SPAN);
+      card.dataset.active = String(rel === 0);
+      card.tabIndex = abs > VISIBLE_SPAN ? -1 : 0;
+    });
+    const activeCard = cards[active];
+    if (indexEl) indexEl.textContent = String(active + 1).padStart(2, "0");
+    if (captionEl) captionEl.textContent = activeCard?.dataset.deckLabel ?? "";
+  };
+
+  const goTo = (index) => {
+    active = ((index % total) + total) % total;
+    render();
+  };
+
+  const stopAutoplay = () => {
+    if (timer) clearInterval(timer);
+    timer = null;
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    timer = setInterval(() => goTo(active + 1), AUTOPLAY_MS);
+  };
+
+  const setPlaying = (next) => {
+    playing = next;
+    playBtn?.setAttribute("aria-pressed", String(playing));
+    playBtn?.setAttribute("aria-label", playing ? "Pause autoplay" : "Play autoplay");
+    if (iconPause) iconPause.hidden = !playing;
+    if (iconPlay) iconPlay.hidden = playing;
+    if (playing) startAutoplay();
+    else stopAutoplay();
+  };
+
+  cards.forEach((card, i) => {
+    card.addEventListener("click", () => {
+      goTo(i);
+      setPlaying(false);
+    });
+  });
+  prevBtn?.addEventListener("click", () => { goTo(active - 1); setPlaying(false); });
+  nextBtn?.addEventListener("click", () => { goTo(active + 1); setPlaying(false); });
+  playBtn?.addEventListener("click", () => setPlaying(!playing));
+
+  render();
+  setPlaying(playing);
 }

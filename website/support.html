@@ -4,44 +4,164 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Help &amp; Support | Meisai</title>
-    <meta name="description" content="Get help installing and using Meisai, troubleshoot common issues, understand browser permissions, and send feedback or suggestions.">
+    <meta name="description" content="Get help installing and using Meisai, troubleshoot common issues, understand browser permissions, and send feedback.">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#6855ee">
+    <meta name="theme-color" content="#0d0f1a">
     <link rel="canonical" href="__SITE_URL__/support.html">
     <link rel="icon" href="assets/meisai-logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Meisai Help &amp; Support">
-    <meta property="og:description" content="Installation, troubleshooting, permissions, feedback, and frequently asked questions for Meisai.">
+    <meta property="og:description" content="Installation, troubleshooting, permissions, backup, and feedback for Meisai.">
     <meta property="og:url" content="__SITE_URL__/support.html">
     <meta property="og:image" content="__SITE_URL__/assets/social-card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" data-site-header>
       <div class="container nav-shell">
-        <a class="brand" href="./"><img src="assets/meisai-logo.png" width="42" height="42" alt=""><span>Meisai</span></a>
+        <a class="brand" href="./" aria-label="Meisai home"><img src="assets/meisai-logo.png" width="32" height="32" alt=""><span>Meisai</span></a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="visually-hidden">Open navigation</span><i></i><i></i><i></i></button>
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav><a href="./#features">Features</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a><a href="./#faq">FAQ</a></nav>
-        <a class="button button--small button--primary nav-cta" href="index.html#availability">Get Meisai</a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
+          <a href="./#feature-tasks">Features</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="support.html">Support</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="button button--small button--on-navy nav-cta" href="./#get-meisai">Get Meisai</a>
       </div>
     </header>
     <main id="main">
-      <section class="legal-hero">
-        <div class="container section-heading"><p class="eyebrow">Meisai Help Center</p><h1>How can we help?</h1><p>Find installation guidance, troubleshooting steps, permission explanations, and direct feedback options.</p></div>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow eyebrow--on-navy">Meisai Help Center</p>
+          <h1>How can we help?</h1>
+          <p>Installation guidance, troubleshooting steps, permission explanations, and direct feedback options.</p>
+        </div>
       </section>
-      <div class="container legal-shell">
-        <nav class="legal-nav" aria-label="Support sections"><a href="#getting-started">Getting started</a><a href="#troubleshooting">Troubleshooting</a><a href="#permissions">Permissions</a><a href="#backup">Backup &amp; restore</a><a href="#feedback">Feedback</a></nav>
-        <article class="legal-content">
-          <section id="getting-started"><h2>Getting started</h2><ol><li>Add Meisai to Firefox, Chrome, or Brave and open a new tab.</li><li>Complete the first-time setup with your name and optional learning goal.</li><li>Use Home to add tasks, notes, habits, upcoming events, or a focus statement.</li><li>Press <strong>Ctrl + K</strong> or <strong>Cmd + K</strong> anywhere inside Meisai to open the command palette.</li><li>On a supported website, use the page-edge Meisai Helper for reading, capture, and note actions.</li></ol></section>
-          <section id="troubleshooting"><h2>Troubleshooting</h2><div class="faq-list"><details><summary>Meisai shows “Local data error”</summary><p>Reload the extension from <code>about:addons</code> in Firefox or <code>chrome://extensions</code> in Chrome or Brave, then reopen the new tab. Existing local data is not changed by the error screen. If the issue continues, open the extension background console and include the error in a feedback report.</p></details><details><summary>The Meisai Helper is missing</summary><p>Browsers prevent extensions from running on protected internal pages and extension-store pages. Test on a normal HTTP or HTTPS webpage and reload that page after reloading Meisai.</p></details><details><summary>Screenshot capture is unavailable</summary><p>Open Meisai from a normal webpage, ensure the extension is enabled for that site, and retry the capture. Supported browsers do not permit capture on protected internal pages.</p></details><details><summary>Website blocking is not active</summary><p>Blocking starts only while a Pomodoro focus session is running. Add domains under Settings → Website Blocking, then start the focus timer.</p></details><details><summary>Notifications do not appear</summary><p>Enable the desired notification categories in Settings → Privacy &amp; Data and allow notifications for your browser in the operating system.</p></details></div></section>
-          <section id="permissions"><h2>Why Meisai requests permissions</h2><ul class="permission-list"><li><strong>Storage</strong>Saves lightweight extension preferences such as themes, helper position, and notification choices.</li><li><strong>Alarms &amp; notifications</strong>Keeps timers, countdown reminders, and selected notifications working through the extension service worker.</li><li><strong>Side panel</strong>Provides Meisai from the browser's side-panel surface.</li><li><strong>Active tab &amp; scripting</strong>Runs user-requested capture and restores the visible Meisai Helper on supported tabs.</li><li><strong>Declarative Net Request</strong>Blocks only the websites the user configures while a focus session is active.</li><li><strong>HTTP/HTTPS page access</strong>Powers the visible helper, Reading Mode, selected-page capture, and configured website blocking on normal webpages.</li><li><strong>Bookmarks &amp; history (optional)</strong>Provides local command-palette suggestions when the user grants access. Each source can be disabled independently.</li></ul></section>
-          <section id="backup"><h2>Backup and restore</h2><p>Open Settings → Privacy &amp; Data to export a local JSON backup. Keep that file somewhere safe. The same page can preview and restore a backup in merge or replace mode.</p><p class="notice">Always export a fresh backup before clearing browser data, uninstalling the extension, or using replace-mode restore.</p></section>
-          <section id="feedback"><h2>Feedback &amp; suggestions</h2><p>Report a problem, suggest a feature, or tell us what helps. Please include the Meisai version, browser name and version, the page where the issue occurred, and clear reproduction steps when reporting a bug.</p><div class="support-cards"><div class="support-card"><h3>Send feedback</h3><p>Use the official form for product feedback, feature suggestions, or problem reports.</p><a class="button button--primary" href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Open feedback form</a></div><div class="support-card"><h3>Review privacy</h3><p>Understand local storage, network requests, permissions, and user controls.</p><a class="button button--secondary" href="privacy.html">Read privacy policy</a></div></div></section>
+      <div class="container">
+        <article class="prose">
+          <h2 id="getting-started">Getting started</h2>
+          <ol>
+            <li>Add Meisai to your browser (__AVAILABILITY_NOTE__) and open a new tab.</li>
+            <li>Complete the short first-time setup with your name and an optional learning goal, either step can be skipped.</li>
+            <li>Use Home to add tasks, notes, habits, upcoming events, or a focus statement.</li>
+            <li>Press <strong>Ctrl + K</strong> (or <strong>Cmd + K</strong>) anywhere inside Meisai to open the command palette.</li>
+            <li>On a supported webpage, use the floating Meisai Helper for saving, reading, capture, and note actions.</li>
+          </ol>
+
+          <h2 id="troubleshooting">Troubleshooting</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>Meisai shows a local data error</summary>
+              <div class="faq-body">Reload the extension from <code>about:addons</code> in Firefox or <code>chrome://extensions</code> in Chrome or Brave, then reopen a new tab. Your existing local data is not affected by the error screen. If it continues, include the error text in a feedback report.</div>
+            </details>
+            <details class="faq-item">
+              <summary>The Meisai Helper is missing on a page</summary>
+              <div class="faq-body">Browsers block extensions from running on protected internal pages and extension-store pages. Test on a normal HTTP or HTTPS page, and reload that page after reloading Meisai.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Screenshot capture isn't working</summary>
+              <div class="faq-body">Open Meisai Helper from a normal webpage and confirm the extension is enabled for that site, then retry. Capture is not available on protected internal pages.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Website blocking isn't active</summary>
+              <div class="faq-body">Blocking only runs while a Pomodoro focus session is in progress. Add domains under Settings → Website Blocking, then start the focus timer.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Notifications don't appear</summary>
+              <div class="faq-body">Enable the notification categories you want in Settings → Privacy &amp; Data, and confirm notifications are allowed for your browser at the operating-system level.</div>
+            </details>
+          </div>
+
+          <h2 id="permissions">Why Meisai requests permissions</h2>
+          <ul>
+            <li><strong>Storage</strong>: saves lightweight preferences such as theme, wallpaper, and layout.</li>
+            <li><strong>Alarms &amp; notifications</strong>: keeps Pomodoro timing and selected reminders running in the background.</li>
+            <li><strong>Side panel</strong>: provides Meisai from the browser's side-panel surface.</li>
+            <li><strong>Active tab &amp; scripting</strong>: runs your requested capture actions and restores Meisai Helper on already-open supported tabs.</li>
+            <li><strong>Declarative Net Request</strong>: blocks only the sites you configure, only during an active focus session.</li>
+            <li><strong>HTTP/HTTPS page access</strong>: powers Meisai Helper, Reading Mode, page capture, and configured website blocking.</li>
+            <li><strong>Bookmarks &amp; history (optional)</strong>: adds local command-palette suggestions only if you enable it; each source can be turned off independently.</li>
+          </ul>
+          <p>Read the full <a href="privacy.html">privacy policy</a> for how each permission is used.</p>
+
+          <h2 id="backup">Backup and restore</h2>
+          <p>Open Settings → Privacy &amp; Data to export everything, or a single area such as planning, notes and Knowledge Vault, reading, or career data. Keep the JSON backup file somewhere safe. The same page can preview a backup file and restore it in merge or replace mode, and delete one data category without clearing the rest of Meisai.</p>
+          <p><strong>Tip:</strong> export a fresh backup before clearing browser data, uninstalling the extension, or using replace-mode restore.</p>
+
+          <h2 id="faq">Frequently asked questions</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>What is Meisai?</summary>
+              <div class="faq-body">Meisai is a personal workspace that adds planning, capture, knowledge, reading, focus, and career tools to the browser you already use.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Is Meisai a browser?</summary>
+              <div class="faq-body">No. Meisai is a workspace layer delivered through your browser. It doesn't replace your browser's web engine or your normal browsing experience.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Which browsers support Meisai?</summary>
+              <div class="faq-body">__AVAILABILITY_NOTE__</div>
+            </details>
+            <details class="faq-item">
+              <summary>Where is my data stored?</summary>
+              <div class="faq-body">Currently, core workspace data is stored locally on your device, in your browser's local storage.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need an account?</summary>
+              <div class="faq-body">No. Core features work without signing up or creating an account.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Does Meisai sync across devices?</summary>
+              <div class="faq-body">Not yet. Meisai currently stores your workspace locally. Cross-device cloud sync is planned for a future version.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Is Meisai free?</summary>
+              <div class="faq-body">Yes, free while Meisai grows. There's no paid tier today.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I customize the workspace?</summary>
+              <div class="faq-body">Yes. You can resize, rearrange, show, and hide supported widgets, and restore the default layout any time.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Can I use Meisai for career organization?</summary>
+              <div class="faq-body">Yes, through Resume Hub, Portfolio, and Job Tracker, all part of the current workspace.</div>
+            </details>
+          </div>
+
+          <h2 id="feedback">Feedback &amp; suggestions</h2>
+          <p>Report a problem, suggest a feature, or tell us what's working. Please include your Meisai version, browser name and version, the page where the issue happened, and steps to reproduce it when reporting a bug.</p>
+          <div class="support-grid">
+            <div class="support-card">
+              <h3>Send feedback</h3>
+              <p>Use the official form for product feedback, feature requests, or bug reports.</p>
+              <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Open feedback form →</a>
+            </div>
+            <div class="support-card">
+              <h3>Review privacy</h3>
+              <p>Understand local storage, network requests, permissions, and your controls.</p>
+              <a href="privacy.html">Read privacy policy →</a>
+            </div>
+            <div class="support-card">
+              <h3>Report an issue</h3>
+              <p>Found a bug in the source? Open an issue on the project repository.</p>
+              <a href="__ISSUES_URL__" target="_blank" rel="noopener noreferrer">Open an issue →</a>
+            </div>
+          </div>
         </article>
       </div>
     </main>
-    <footer class="site-footer"><div class="container footer-bottom"><span>© <span data-current-year></span> Meisai.</span><span><a href="./">Home</a> · <a href="privacy.html">Privacy</a></span></div></footer>
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span>© <span data-current-year></span> Meisai.</span>
+        <span><a href="./">Home</a> · <a href="privacy.html">Privacy</a></span>
+      </div>
+    </footer>
     <script src="script.js" defer></script>
   </body>
 </html>

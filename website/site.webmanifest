@@ -1,11 +1,11 @@
 {
   "name": "Meisai",
   "short_name": "Meisai",
-  "description": "An all-in-one productivity workspace to organize tasks, notes, knowledge, reading, focus sessions, learning, and career progress.",
+  "description": "A local-first browser workspace for tasks, notes, knowledge, focus, learning, and career tracking.",
   "start_url": "./",
   "display": "browser",
-  "background_color": "#f8f8ff",
-  "theme_color": "#6855ee",
+  "background_color": "#0d0f1a",
+  "theme_color": "#0d0f1a",
   "icons": [
     {
       "src": "assets/meisai-logo.png",
