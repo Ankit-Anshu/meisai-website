@@ -2,15 +2,17 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Builds the static site into `_new-site/` at the repository root by copying
+// Builds the static site into `_site/` at the repository root by copying
 // this folder, stripping conditional <!--IF_X--> blocks for browsers that
 // aren't actually live, and replacing __TOKEN__ placeholders with real
 // values. Per website.md: never imply support for a store that isn't live —
 // so an unconfigured browser's markup is removed entirely, not shown as a
 // disabled "coming soon" button.
+// `_site` must match the `path:` the pages.yml workflow passes to
+// actions/upload-pages-artifact, or the deploy step has nothing to upload.
 const source = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(source, "..");
-const destination = path.join(projectRoot, "_new-site");
+const destination = path.join(projectRoot, "_site");
 const normalizeUrl = (value) => String(value || "").trim().replace(/\/+$/, "");
 
 const siteUrl = normalizeUrl(process.env.SITE_URL) || "http://localhost:4174";
