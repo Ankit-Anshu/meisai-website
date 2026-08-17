@@ -20,24 +20,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v6
-
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
-
-      - name: Build website
+      - name: Build static website
         run: node website/build.mjs
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
           REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository }}
           CHROME_WEB_STORE_URL: ${{ vars.CHROME_WEB_STORE_URL }}
-          FEEDBACK_URL: ${{ vars.FEEDBACK_URL }}
-
-      - name: Upload website
+          FIREFOX_ADDONS_URL: https://addons.mozilla.org/en-US/firefox/addon/meisai-workspace/
+          BRAVE_EXTENSION_URL: ${{ vars.BRAVE_EXTENSION_URL }}
+          FEEDBACK_URL: https://forms.gle/sGxecwiz6z5R2UNB6
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
@@ -48,8 +46,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-
     steps:
-      - name: Deploy GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
