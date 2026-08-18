@@ -546,6 +546,11 @@ h3 { font-size: 22px; line-height: 1.3; letter-spacing: -0.01em; }
 .feature-callout img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .feature-block__media--tall .window img { max-height: 620px; object-fit: cover; object-position: top; }
 
+/* A portrait dashboard-widget capture (e.g. the Tasks card) shouldn't
+   stretch to the full column width like the wide browser-window
+   screenshots -- shrink the frame itself and center it instead. */
+.feature-block__media--compact { max-width: 220px; justify-self: center; }
+
 /* Illustrated media panel for features without a real screenshot (Fill Info) */
 .feature-block__media--icon {
   box-shadow: none;
