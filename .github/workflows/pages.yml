@@ -33,6 +33,7 @@ jobs:
           REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository }}
           CHROME_WEB_STORE_URL: ${{ vars.CHROME_WEB_STORE_URL }}
           FIREFOX_ADDONS_URL: https://addons.mozilla.org/en-US/firefox/addon/meisai-workspace/
+          EDGE_ADDONS_URL: https://microsoftedge.microsoft.com/addons/detail/hhfeegdajopjadmjnlbaengafbphcaoa
           BRAVE_EXTENSION_URL: ${{ vars.BRAVE_EXTENSION_URL }}
           FEEDBACK_URL: https://forms.gle/sGxecwiz6z5R2UNB6
       - name: Upload Pages artifact

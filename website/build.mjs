@@ -28,17 +28,31 @@ const chromeStoreUrl = normalizeUrl(process.env.CHROME_WEB_STORE_URL);
 const firefoxStoreUrl =
   normalizeUrl(process.env.FIREFOX_ADDONS_URL) ||
   "https://addons.mozilla.org/en-US/firefox/addon/meisai-workspace";
+// Edge is confirmed live (like Firefox), so it gets the same
+// env-override-with-hardcoded-fallback treatment and is shown unconditionally
+// in markup rather than gated behind an <!--IF_EDGE--> block.
+const edgeStoreUrl =
+  normalizeUrl(process.env.EDGE_ADDONS_URL) ||
+  "https://microsoftedge.microsoft.com/addons/detail/hhfeegdajopjadmjnlbaengafbphcaoa";
 const braveStoreUrl = normalizeUrl(process.env.BRAVE_EXTENSION_URL) || chromeStoreUrl;
 const feedbackUrl =
   normalizeUrl(process.env.FEEDBACK_URL) || "https://forms.gle/sGxecwiz6z5R2UNB6";
 
-const liveBrowserCount = 1 + (chromeStoreUrl ? 1 : 0) + (braveStoreUrl ? 1 : 0);
-const availabilityNote =
-  liveBrowserCount === 1
-    ? "Available now on Firefox."
-    : liveBrowserCount === 2
-      ? `Available on Firefox and ${chromeStoreUrl ? "Chrome" : "Brave"}.`
-      : "Available on Firefox, Chrome, and Brave.";
+// Ordered so the availability note and JSON-LD operatingSystem list read
+// naturally: browsers confirmed live (Firefox, Edge) first, then whichever
+// optional ones (Chrome, Brave) happen to be configured for this build.
+const liveBrowsers = [
+  "Firefox",
+  "Edge",
+  ...(chromeStoreUrl ? ["Chrome"] : []),
+  ...(braveStoreUrl ? ["Brave"] : []),
+];
+const listJoin = (items) =>
+  items.length <= 2
+    ? items.join(" and ")
+    : `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+const availabilityNote = `Available on ${listJoin(liveBrowsers)}.`;
+const operatingSystems = liveBrowsers.join(", ");
 
 const replacements = new Map([
   ["__SITE_URL__", siteUrl],
@@ -46,8 +60,10 @@ const replacements = new Map([
   ["__ISSUES_URL__", issuesUrl],
   ["__CHROME_STORE_URL__", chromeStoreUrl],
   ["__FIREFOX_STORE_URL__", firefoxStoreUrl],
+  ["__EDGE_STORE_URL__", edgeStoreUrl],
   ["__BRAVE_STORE_URL__", braveStoreUrl],
   ["__AVAILABILITY_NOTE__", availabilityNote],
+  ["__OPERATING_SYSTEMS__", operatingSystems],
   ["__FEEDBACK_URL__", feedbackUrl],
 ]);
 
@@ -86,7 +102,7 @@ for (const relative of textFiles) {
   content = applyConditionalBlocks(content, {
     CHROME: Boolean(chromeStoreUrl),
     BRAVE: Boolean(braveStoreUrl),
-    MULTI_BROWSER: liveBrowserCount > 1,
+    MULTI_BROWSER: liveBrowsers.length > 1,
   });
   for (const [token, value] of replacements) content = content.replaceAll(token, value);
   await writeFile(file, content, "utf8");
@@ -95,5 +111,6 @@ for (const relative of textFiles) {
 console.log(`Built Meisai website at ${destination}`);
 console.log(`Canonical URL: ${siteUrl}`);
 console.log(`Firefox Add-ons: ${firefoxStoreUrl}`);
+console.log(`Edge Add-ons: ${edgeStoreUrl}`);
 console.log(`Chrome Web Store: ${chromeStoreUrl || "not live, hidden from site"}`);
 console.log(`Brave: ${braveStoreUrl || "not live, hidden from site"}`);
