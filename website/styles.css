@@ -176,6 +176,16 @@ h3 { font-size: 22px; line-height: 1.3; letter-spacing: -0.01em; }
 .button--brand:hover { background: #6f5ff0; }
 .button--brand svg { flex-shrink: 0; }
 
+/* Every store button (Firefox, Edge, and Chrome/Brave once they're live)
+   shares this one light-violet style — no single browser reads as more
+   "primary" than another. */
+.button--store {
+  background: #b9adf6;
+  color: var(--navy);
+  box-shadow: 0 10px 24px rgba(124, 108, 240, 0.3);
+}
+.button--store:hover { background: #cac0f9; }
+
 .store-row {
   display: flex;
   flex-wrap: wrap;
