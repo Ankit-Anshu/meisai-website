@@ -1,4 +1,4 @@
-Meisai is an all-in-one browser workspace designed to bring focus, knowledge, learning, and career management into one calm place. It combines task planning, Pomodoro focus sessions, notes, reading mode, knowledge storage, learning roadmaps, projects, job tracking, resume versions, and form autofill—reducing the need to switch between multiple apps. 
+Meisai is an all-in-one browser workspace designed to bring focus, habit tracker, notes, time blocking, tasks, learning, and career management into one calm place. It combines task planning, Pomodoro focus sessions, notes, reading mode, knowledge storage, learning roadmaps, projects, job tracking, resume versions, and form autofill—reducing the need to switch between multiple apps. 
 
 Meisai website: https://ankit-anshu.github.io/meisai-website/
 
