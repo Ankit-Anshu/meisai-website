@@ -1,108 +1,58 @@
-# Meisai website (rebuild)
+# Meisai
 
-A full visual and content rebuild of the Meisai marketing site, using fresh
-screenshots captured directly from the current extension (loaded headlessly
-in Chromium with real, seeded demo data) instead of the outdated images in
-`website/assets`. The Meisai app icon is unchanged, since it was the one
-asset that was still current.
+[Meisai](https://ankit-anshu.github.io/meisai-website/) is a personal workspace
+built into your browser. It brings planning, focus, habits, notes, reading,
+learning, career organization, and browser tools together in one calm place.
 
-**Positioning and structure follow `website.md` at the repo root** (a build
-spec: category, hero copy, page order, tone rules, and a list of phrases to
-avoid). The homepage positions Meisai as a *browser workspace layer* ("Your
-browser, with a workspace built around you"), not a new-tab replacement or a
-todo app, and never claims the browser or new tab is "broken" or "chaotic."
-Firefox and Edge are presented as live unconditionally; Chrome/Brave stay
-entirely out of the copy until `CHROME_WEB_STORE_URL` / `BRAVE_EXTENSION_URL`
-are actually set (see `build.mjs`'s `__AVAILABILITY_NOTE__` token), rather
-than showing a "coming soon" placeholder that implies imminent support.
+Instead of spreading everyday work across disconnected apps and forgotten tabs,
+Meisai keeps the information you need close to the page where you are already
+working. A new tab becomes a useful home for the day, while the sidebar, pinned
+popup, and Meisai Helper make important actions available while browsing.
 
-Design direction: a dark, confident hero band over calm, paper-toned content
-sections, colors pulled from the product's own UI (the violet→teal app-icon
-gradient reserved for brand moments only; a single forest-green accent for
-interactive UI, per website.md's "one Meisai accent" rule) so the site and
-the product feel like one thing. No em dashes anywhere in the copy, by
-standing preference — commas, colons, or a period split instead.
+## One workspace for what matters
 
-## Local preview
+Meisai connects lightweight daily tools with deeper organization:
 
-```powershell
-$env:SITE_URL="http://localhost:4174"
-node new-website/build.mjs
-python -m http.server 4174 --directory _new-site
-```
+- **Plan and focus:** Capture today's priorities, organize larger work on a
+  Kanban and list-based Task Board, block time on a daily schedule, manage
+  upcoming events, and use Pomodoro focus sessions and website blocking.
+- **Build consistent habits:** Track habits across the month, review completion
+  and streaks, organize routines by category, record wellness measures, and keep
+  monthly goals and reflections.
+- **Capture ideas and knowledge:** Save quick notes, clear a Brain Dump, collect
+  useful material in the Vault, keep pages in Read Later, and open articles in a
+  focused reading experience with highlights and notes.
+- **Learn with direction:** Organize learning resources and follow practical
+  StagePath roadmaps from foundational topics to projects.
+- **Manage career work:** Keep resume versions, track applications and interview
+  stages, format LinkedIn posts, organize projects, and reuse saved personal
+  details through review-first Fill Info.
+- **Organize browsing:** Keep important pages as pinned tabs, collect related
+  tabs into Group Tabs, and restore saved browser Workspaces without having to
+  remember every page or URL.
+- **Act from anywhere:** Use Universal Search and commands, the browser sidebar,
+  the pinned extension popup, or the floating Meisai Helper to reach tools
+  without returning to the homepage.
+- **Make the web more comfortable:** Apply readable page themes, reduce visual
+  distractions, and create a calmer browsing experience with Web Comfort.
 
-Open `http://localhost:4174`.
+## Designed around user control
 
-## Content source of truth
+Meisai is local-first. Personal workspace information stays in the browser, and
+users can export, import, or remove individual data areas when needed. Features
+that interact with webpages are user initiated. Fill Info shows matched values
+for review before filling a form and never submits the form automatically.
 
-Copy is grounded in the actual extension source (`extension/manifest.json`,
-`extension/scripts/**`) and in `feature.md` at the repo root, not in
-`docs/MEISAI_FEATURES_AND_FUNCTIONS.md` — that doc turned out to be missing
-several shipped features (Fill Info, LinkedIn Formatter, Resume Hub, personal
-Kanban, Focus Tab, Pinned tabs/Group Tabs/Workspaces, the extension popup)
-and to describe the command palette's colon syntax (`task:`), which the
-current code doesn't accept for `note`/`brain` — the real, UI-surfaced
-commands are the slash form (`/task`, `/note`, `/brain`), confirmed directly
-in `scripts/app/components/command-palette/search.js` and
-`scripts/ui/command-bar.js`. If that internal doc gets refreshed, it's worth
-re-diffing against this site's copy.
-
-## Regenerating screenshots
-
-Screenshots live in `assets/screens/*.webp`. To recapture them from a newer
-build of the extension, load the unpacked extension in Chromium with
-Playwright (`--load-extension` / `--disable-extensions-except`), drive
-onboarding, seed a few realistic records through the app's own repository
-functions (see `scripts/ui/*.js` — `createTask`, `saveStickyNote`,
-`saveVault`, `saveProject`, `saveApplication`, `saveResume`, and
-`scripts/data/repositories/tab-workspace-repository.js`'s `saveTabSet` for
-pinned tabs/Group Tabs/Workspaces), then screenshot each route.
-
-Gotchas hit while capturing:
-- Settings routes live on `settings.html#/<path>` (not `app.html`), and hash
-  navigation within the same document doesn't reliably re-render the SPA
-  router — force a full load (`page.goto('about:blank')` then the real URL).
-- Focus Tab is served from `newtab.html#/focus-tab`, not `app.html`.
-- The project Kanban board opens from a `<details class="career-card-menu">`
-  disclosure on each project card (click `summary`, then
-  `[data-open-project-kanban]`) — screenshot the `<dialog>` element directly
-  to skip its blurred `::backdrop`.
-
-## Promoting this to the live site
-
-This folder builds independently into `_new-site/` so it doesn't collide
-with `website/`'s `_site/` output. To make this the deployed site:
-
-1. Replace `website/` with this folder's contents (or update
-   `.github/workflows/pages.yml` to build from `new-website/` and upload
-   `_new-site/` instead of `website/`'s `_site/`).
-2. Keep the same repository variables: `CHROME_WEB_STORE_URL`,
-   `FIREFOX_ADDONS_URL`, `BRAVE_EXTENSION_URL`, `FEEDBACK_URL`.
-3. Re-run the search-discovery checklist in the old `website/README.md`
-   (resubmit `sitemap.xml`, request re-indexing).
-
-## Browser store URLs
-
-Same contract as before — set these as GitHub repository variables once each
-store listing is live:
-
-- `CHROME_WEB_STORE_URL`
-- `FIREFOX_ADDONS_URL` (defaults to the current Meisai Firefox listing)
-- `EDGE_ADDONS_URL` (defaults to the current Meisai Edge Add-ons listing)
-- `BRAVE_EXTENSION_URL` (falls back to the Chrome Web Store listing)
-
-Until `CHROME_WEB_STORE_URL` / `BRAVE_EXTENSION_URL` is configured, its
-install button is left out of the page entirely, rather than shown disabled
-with a "Coming soon" label that implies imminent support. Firefox and Edge
-always render, since both are confirmed live.
+The workspace can also be personalized with layouts, widget sizes, themes,
+wallpapers, display preferences, focus environments, and shortcuts. The goal is
+not to add more noise to the browser, but to create a flexible place where work,
+knowledge, and progress remain connected.
 
 ## Contribute to StagePath
 
-Meisai's built-in learning paths open in
-[StagePath](https://ankit-anshu.github.io/stagepath/). If you would like to
-help make StagePath clearer and more useful, you can contribute by suggesting
-or correcting roadmap stages, adding missing skills, recommending quality
-learning resources and project ideas, reporting broken links, or improving
-the documentation, accessibility, and interface. Contributions should keep
-each path practical, beginner-friendly, and easy to follow from the first
-topic to a finished project.
+Meisai learning paths open in
+[StagePath](https://ankit-anshu.github.io/stagepath/). Contributions can improve
+roadmap stages, add missing skills, recommend learning resources or project
+ideas, report broken links, and improve documentation, accessibility, or the
+interface. Keep each path practical, beginner-friendly, and easy to follow from
+the first topic to a completed project.
