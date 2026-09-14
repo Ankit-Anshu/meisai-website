@@ -1,37 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Meisai | A Personal Workspace for Your Browser</title>
-    <meta name="description" content="Meisai adds a personal workspace to your browser for tasks, notes, knowledge, reading, focus, and career organization.">
-    <meta name="keywords" content="browser workspace, personal workspace, productivity workspace, browser productivity, personal knowledge workspace, browser productivity extension, task and notes workspace, focus workspace, knowledge management workspace, career workspace">
-    <meta name="author" content="Meisai">
-    <meta name="theme-color" content="#0d0f1a">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="__SITE_URL__/">
-    <link rel="icon" href="assets/meisai-logo.png" type="image/png">
-    <link rel="apple-touch-icon" href="assets/meisai-logo.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="styles.css">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Meisai">
-    <meta property="og:title" content="Meisai | A Personal Workspace for Your Browser">
-    <meta property="og:description" content="A personal workspace for your browser. Tasks, notes, knowledge, reading, focus, and career tools in one place.">
-    <meta property="og:url" content="__SITE_URL__/">
-    <meta property="og:image" content="__SITE_URL__/assets/social-card.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Meisai, a personal workspace for your browser">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Meisai | A Personal Workspace for Your Browser">
-    <meta name="twitter:description" content="A personal workspace for your browser. Tasks, notes, knowledge, reading, focus, and career tools in one place.">
-    <meta name="twitter:image" content="__SITE_URL__/assets/social-card.jpg">
-    <meta name="twitter:image:alt" content="Meisai, a personal workspace for your browser">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meisai | A Personal Workspace for Your Browser</title>
+  <meta name="description"
+    content="Meisai adds a personal workspace to your browser for tasks, habits, wellness, notes, habit tracker, reading, focus, and career organization.">
+  <meta name="keywords"
+    content="browser workspace, personal workspace, productivity workspace, browser productivity, personal knowledge workspace, browser productivity extension, task and notes workspace, focus workspace, knowledge management workspace, career workspace, Meisai, Meisai workspace">
+  <meta name="author" content="Meisai">
+  <meta name="theme-color" content="#0d0f1a">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="__SITE_URL__/">
+  <link rel="icon" href="assets/meisai-logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/meisai-logo.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
 
-    <script type="application/ld+json">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Meisai">
+  <meta property="og:title" content="Meisai | A Personal Workspace for Your Browser">
+  <meta property="og:description"
+    content="A personal workspace for your browser. Tasks, habit and wellness tracking, notes, reading, focus, and career tools in one place.">
+  <meta property="og:url" content="__SITE_URL__/">
+  <meta property="og:image" content="__SITE_URL__/assets/meisai-link-preview.png">
+  <meta property="og:image:secure_url" content="__SITE_URL__/assets/meisai-link-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1674">
+  <meta property="og:image:height" content="941">
+  <meta property="og:image:alt"
+    content="Meisai personal browser workspace with tasks, habits, notes, focus, reading, learning, projects, and career tools">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meisai | A Personal Workspace for Your Browser">
+  <meta name="twitter:description"
+    content="A personal workspace for your browser. Tasks, habit and wellness tracking, notes, reading, focus, and career tools in one place.">
+  <meta name="twitter:image" content="__SITE_URL__/assets/meisai-link-preview.png">
+  <meta name="twitter:image:alt"
+    content="Meisai personal browser workspace with tasks, habits, notes, focus, reading, learning, projects, and career tools">
+
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
@@ -46,12 +54,13 @@
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "featureList": [
           "Tasks kept close to the rest of the workspace",
+          "Meisai Tasks board with Kanban and List views, ABCDE priority, and time blocking",
+          "Monthly Habit Tracker with streaks, categories, wellness metrics, goals, and reflection",
           "Quick Notes for capturing thoughts immediately",
-          "Knowledge Vault for saved, organized resources",
+          "Vault for saved, organized resources",
           "Read Later for saving pages without losing them in tabs",
           "Focus sessions with a Pomodoro timer",
           "Resume Hub with multiple versions, PDF, and Word",
-          "Portfolio built from saved projects and resume",
           "Job Tracker for applications and interview stages",
           "LinkedIn Text Formatter with live preview",
           "Fill Info for review-first form filling",
@@ -63,809 +72,952 @@
         ]
       }
     </script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+</head>
 
-    <header class="site-header" data-site-header>
-      <div class="container nav-shell">
-        <a class="brand" href="./" aria-label="Meisai home">
-          <img src="assets/meisai-logo.png" width="32" height="32" alt="">
-          <span>Meisai</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-          <span class="visually-hidden">Open navigation</span>
-          <i></i><i></i><i></i>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
-          <div class="feature-nav" data-feature-nav>
-            <button class="feature-nav__trigger" type="button" aria-expanded="false" aria-controls="feature-nav-panel" data-feature-nav-trigger>Features</button>
-            <div class="feature-nav__panel" id="feature-nav-panel" data-feature-nav-panel>
-              <div>
-                <strong>Plan &amp; focus</strong>
-                <a href="#feature-tasks">Tasks</a>
-                <a href="#feature-focus">Focus timer</a>
-              </div>
-              <div>
-                <strong>Capture &amp; learn</strong>
-                <a href="#feature-notes">Notes</a>
-                <a href="#feature-vault">Knowledge Vault</a>
-                <a href="#feature-reader">Read Later</a>
-              </div>
-              <div>
-                <strong>Career</strong>
-                <a href="#feature-career">Resume Hub</a>
-                <a href="#feature-portfolio">Portfolio</a>
-                <a href="#feature-jobs">Job Tracker</a>
-                <a href="#feature-linkedin">LinkedIn Formatter</a>
-                <a href="#feature-fill-info">Fill Info</a>
-              </div>
-              <div>
-                <strong>Workspace</strong>
-                <a href="#feature-command">Command Center</a>
-                <a href="#feature-customize">Custom workspace</a>
-                <a href="#feature-appearance">Themes &amp; wallpapers</a>
-                <a href="#feature-webcomfort">Web Comfort</a>
-                <a href="#feature-helper">Meisai Helper</a>
-                <a href="#feature-popup">Pinned popup</a>
-                <a class="feature-nav__all" href="#feature-tasks">See it all →</a>
-              </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="container nav-shell">
+      <a class="brand" href="./" aria-label="Meisai home">
+        <img src="assets/meisai-logo.png" width="32" height="32" alt="">
+        <span>Meisai</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="visually-hidden">Open navigation</span>
+        <i></i><i></i><i></i>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
+        <div class="feature-nav" data-feature-nav>
+          <button class="feature-nav__trigger" type="button" aria-expanded="false" aria-controls="feature-nav-panel"
+            data-feature-nav-trigger>Features</button>
+          <div class="feature-nav__panel" id="feature-nav-panel" data-feature-nav-panel>
+            <div>
+              <strong>Plan &amp; focus</strong>
+              <a href="#feature-tasks">Tasks</a>
+              <a href="#feature-meisai-tasks">Meisai Tasks board</a>
+              <a href="#feature-habits">Habit Tracker</a>
+              <a href="#feature-focus">Focus timer</a>
+            </div>
+            <div>
+              <strong>Capture &amp; learn</strong>
+              <a href="#feature-notes">Notes</a>
+              <a href="#feature-vault">Vault</a>
+              <a href="#feature-reader">Read Later</a>
+            </div>
+            <div>
+              <strong>Career</strong>
+              <a href="#feature-career">Resume Hub</a>
+              <a href="#feature-jobs">Job Tracker</a>
+              <a href="#feature-linkedin">LinkedIn Formatter</a>
+              <a href="#feature-fill-info">Fill Info</a>
+            </div>
+            <div>
+              <strong>Workspace</strong>
+              <a href="#feature-command">Command Center</a>
+              <a href="#feature-customize">Custom workspace</a>
+              <a href="#feature-appearance">Themes &amp; wallpapers</a>
+              <a href="#feature-webcomfort">Web Comfort</a>
+              <a href="#feature-helper">Meisai Helper</a>
+              <a href="#feature-popup">Pinned popup</a>
+              <a class="feature-nav__all" href="#feature-tasks">See it all →</a>
             </div>
           </div>
-          <a href="#workflow">How it works</a>
-          <a href="#help">Help &amp; Support</a>
-          <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Feedback</a>
-        </nav>
-        <a class="button button--small button--on-navy nav-cta" href="#get-meisai">Get Meisai</a>
-      </div>
-    </header>
-
-    <main id="main">
-      <!-- ================================================================ HERO -->
-      <section class="hero">
-        <div class="container hero-stack">
-          <div class="hero-copy" data-reveal>
-            <p class="eyebrow eyebrow--on-navy">Browser workspace</p>
-            <h1>Turn your browser into your personal workspace</h1>
-            <p class="lede">Meisai brings your tasks, notes, reading mode, learning hub, and career tools together, so you can work, learn, and stay organized without constantly switching between apps.</p>
-            <div class="hero-actions">
-              <a class="button button--on-navy" href="#get-meisai">Get Meisai</a>
-              <a class="button button--ghost-on-navy" href="#workflow">See how it works</a>
-            </div>
-            
-          </div>
         </div>
-        <div class="hero-visual" data-reveal>
-          <div class="window">
-            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Browser · Meisai workspace</span></div>
-            <img src="assets/screens/home-dashboard.webp" width="2400" height="1500" alt="Meisai workspace open inside the browser, showing tasks, notes, brain dump, upcoming events, read later, habits, and a focus timer" fetchpriority="high" decoding="async">
-          </div>
-        </div>
-      </section>
+        <a href="#workflow">How it works</a>
+        <a href="#help">Help &amp; Support</a>
+        <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Feedback</a>
+      </nav>
+      <a class="button button--small button--on-navy nav-cta" href="#get-meisai">Get Meisai</a>
+    </div>
+  </header>
 
-      <!-- ================================================================ STATUS BAR -->
-      <div class="status-bar">
-        <div class="container">
-          
+  <main id="main">
+    <!-- ================================================================ HERO -->
+    <section class="hero">
+      <div class="container hero-stack">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow eyebrow--on-navy">Browser workspace</p>
+          <h1>Turn your browser into your personal workspace</h1>
+          <p class="lede">Meisai brings your tasks, notes, reading mode, resource hub, and career tools together, so you
+            can work, learn, and stay organized without constantly switching between apps.</p>
+          <div class="hero-actions">
+            <a class="button button--on-navy" href="#get-meisai">Get Meisai</a>
+            <a class="button button--ghost-on-navy" href="#workflow">See how it works</a>
+          </div>
+
         </div>
       </div>
-
-      <!-- ================================================================ PRODUCT DEMO -->
-      <section class="section section--tight">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            <p class="eyebrow">See it in action</p>
-            <h2>Everything Meisai brings together</h2>
-          </div>
-          <div class="deck" data-deck aria-label="Meisai workspace walkthrough" data-reveal>
-            <div class="deck__stage" data-deck-stage>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="0" data-deck-label="Open the workspace"><img src="assets/screens/home-dashboard.webp" alt="Open the workspace" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="1" data-deck-label="Add what matters today"><img src="assets/screens/tasks-demo.gif" alt="Adding a task to Today's Tasks and checking it off" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="2" data-deck-label="Catch a thought before it slips"><img src="assets/screens/notes-demo.gif" alt="Creating a new note in Notes" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="3" data-deck-label="Keep the page, not just the tab"><img src="assets/screens/readlater-demo.gif" alt="Filtering saved articles in Read Later" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="4" data-deck-label="Open Knowledge Vault"><img src="assets/screens/vault-demo.gif" alt="Searching entries in Knowledge Vault" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="5" data-deck-label="Start a focus session"><img src="assets/screens/focus-demo.gif" alt="Start a focus session" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="6" data-deck-label="Keep resume versions ready"><img src="assets/screens/resume-demo.gif" alt="Opening a saved resume version in Resume Hub" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="7" data-deck-label="Turn work into a portfolio"><img src="assets/screens/portfolio-demo.gif" alt="Switching to the Projects tab of a portfolio site" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="8" data-deck-label="Track an application"><img src="assets/screens/jobs-demo.gif" alt="Adding a new application to the Job Tracker" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="9" data-deck-label="Write a LinkedIn post"><img src="assets/screens/linkedin-demo.gif" alt="Typing a LinkedIn post with a live formatted preview" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="10" data-deck-label="Rearrange widgets"><img src="assets/screens/customize-demo.gif" alt="Resizing a dashboard widget to large" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="11" data-deck-label="Open Command Center"><img src="assets/screens/command-demo.gif" alt="Focusing the Command Center search bar" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="12" data-deck-label="Follow you across the web"><img src="assets/screens/helper-panel.webp" alt="Meisai Helper" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="13" data-deck-label="Reach for the pinned popup"><img src="assets/screens/popup-demo.gif" alt="Starting Focus Mode from the pinned extension popup" loading="lazy"></button>
-              <button class="deck__card" type="button" data-deck-card data-deck-go="14" data-deck-label="Theme any page, clear the clutter"><img src="assets/screens/web-comfort-demo.gif" alt="Web Comfort cycling a webpage through Day, Night, Sepia, Twilight, and AMOLED themes while hiding ads and a newsletter popup" loading="lazy"></button>
-            </div>
-            <p class="deck__caption"><span data-deck-index>01</span><span data-deck-caption>Open the workspace</span></p>
-            <div class="deck__controls">
-              <button class="deck__nav" type="button" data-deck-prev aria-label="Previous">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <button class="deck__play" type="button" data-deck-play aria-label="Pause autoplay" aria-pressed="true">
-                <svg data-deck-icon-pause width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="2" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"/><rect x="7.4" y="1.5" width="2.6" height="9" rx="1" fill="currentColor"/></svg>
-                <svg data-deck-icon-play width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" hidden><path d="M2.5 1.5l7 4.5-7 4.5v-9z" fill="currentColor"/></svg>
-              </button>
-              <button class="deck__nav" type="button" data-deck-next aria-label="Next">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-            </div>
-          </div>
+      <div class="hero-visual" data-reveal>
+        <div class="window">
+          <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Browser · Meisai workspace</span></div>
+          <img src="assets/screens/home-dashboard.webp" width="2400" height="1500"
+            alt="Meisai workspace open inside the browser, showing tasks, notes, brain dump, upcoming events, read later, habits, and a focus timer"
+            fetchpriority="high" decoding="async">
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================================================================ YOUR BROWSER ALREADY DOES A LOT -->
-      <section class="section" id="why">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            <p class="eyebrow">Why Meisai exists</p>
-            <h2>Your browser helps you browse. Your day needs more than browsing.</h2>
-            <p>Your work, learning, ideas, reading, tasks, and career resources are scattered across different tools. Meisai brings them closer together by adding a personal workspace to the browser you already use, so everything you need throughout the day is right where you need it.</p>
-          </div>
-          <div class="equation" data-reveal>
-            <div class="equation__item">
-              <strong>Browser</strong>
-              <p>Web · Tabs · Bookmarks · History</p>
-            </div>
-            <div class="equation__op" aria-hidden="true">+</div>
-            <div class="equation__item">
-              <strong>Meisai</strong>
-              <p>Tasks · Notes · Knowledge · Reading · Focus · Career</p>
-            </div>
-            <div class="equation__op" aria-hidden="true">=</div>
-            <div class="equation__item equation__item--result">
-              <strong>One workspace</strong>
-              <p>Everything closer to where the work already happens.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ HOW MEISAI FITS -->
-      <section class="section section--tight" id="workflow">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            <p class="eyebrow">How Meisai fits</p>
-            <h2>Keep the browser you love. Add the workspace you need.</h2>
-          </div>
-          <div class="steps">
-            <div class="step" data-reveal>
-              <h3>Browse</h3>
-              <p>Use your existing browser normally. Meisai doesn't change how you browse the web.</p>
-            </div>
-            <div class="step" data-reveal>
-              <h3>Capture</h3>
-              <p>Save tasks, notes, pages, ideas, and knowledge while you work, right where you already are.</p>
-            </div>
-            <div class="step" data-reveal>
-              <h3>Organize</h3>
-              <p>Bring those pieces into one customizable workspace you can shape around yourself.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CAPABILITIES -->
-      <section class="section" id="capabilities">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            <h2>Everything inside the workspace</h2>
-            <p>A closer look at what's already built, grouped the way you'd actually reach for it.</p>
-          </div>
-          <div class="capability-grid">
-            <article class="capability-card" data-reveal>
-              <span class="capability-card__num">01</span>
-              <h3>Plan and focus</h3>
-              <ul>
-                <li>Today's Focus</li>
-                <li>Tasks and Upcoming</li>
-                <li>Calendar and countdowns</li>
-                <li>Seven-day habits</li>
-                <li>Pomodoro and Focus Tab</li>
-                <li>Website blocking</li>
-                <li>Notifications</li>
-              </ul>
-            </article>
-            <article class="capability-card" data-reveal>
-              <span class="capability-card__num">02</span>
-              <h3>Capture and read</h3>
-              <ul>
-                <li>Notes and Quick Note</li>
-                <li>Brain Dump</li>
-                <li>Knowledge Vault</li>
-                <li>Save to Vault</li>
-                <li>Read Later</li>
-                <li>Reading Mode</li>
-                <li>Highlights and comments</li>
-              </ul>
-            </article>
-            <article class="capability-card" data-reveal>
-              <span class="capability-card__num">03</span>
-              <h3>Learn and build</h3>
-              <ul>
-                <li>Learning Hub</li>
-                <li>Built-in roadmap paths</li>
-                <li>Custom roadmaps</li>
-                <li>Saved learning resources</li>
-                <li>Project Tracker</li>
-                <li>Personal Kanban</li>
-                <li>LinkedIn Formatter and drafts</li>
-              </ul>
-            </article>
-            <article class="capability-card" data-reveal>
-              <span class="capability-card__num">04</span>
-              <h3>Career and present</h3>
-              <ul>
-                <li>Job Tracker</li>
-                <li>Interview stages</li>
-                <li>Resume versions</li>
-                <li>Application outcomes</li>
-                <li>Portfolio</li>
-                <li>Fill Info</li>
-                <li>Professional HTML export</li>
-              </ul>
-            </article>
-            <article class="capability-card" data-reveal>
-              <span class="capability-card__num">05</span>
-              <h3>Navigate and organize</h3>
-              <ul>
-                <li>Universal Command Bar</li>
-                <li>Pinned extension</li>
-                <li>Meisai Helper</li>
-                <li>Pinned tabs</li>
-                <li>Group Tabs</li>
-                <li>Workspaces</li>
-                <li>Browser search suggestions</li>
-              </ul>
-            </article>
-            <article class="capability-card" data-reveal>
-              <span class="capability-card__num">06</span>
-              <h3>Make it yours</h3>
-              <ul>
-                <li>Resizable dashboard widgets</li>
-                <li>Show, hide, and reorder</li>
-                <li>Themes and wallpapers</li>
-                <li>Web Comfort page themes</li>
-                <li>Independent Focus presets</li>
-                <li>Sidebar display modes</li>
-                <li>Selective notifications</li>
-                <li>Backup and restore</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CORE SHOWCASE: TASKS -->
-      <section class="feature-group container">
-        <div class="feature-block" id="feature-tasks" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Plan</p>
-            <h3 style="font-size:32px;margin-top:12px;">Know what needs your attention.</h3>
-            <p>Keep your daily tasks close to the rest of your workspace. Capture what needs to be done, organize priorities, and keep your day visible without opening another productivity app.</p>
-            <ul class="feature-block__list">
-              <li>Add a task, set a priority, and schedule a due date</li>
-              <li>Mark tasks complete without leaving the workspace</li>
-              <li>Add a task instantly from Command Center with /task</li>
-            </ul>
-          </div>
-          <div class="feature-block__media feature-block__media--compact">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Today's Tasks</span></div>
-              <img src="assets/screens/tasks-demo.gif" width="300" height="488" alt="Adding a task to Today's Tasks and checking it off" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CORE SHOWCASE: NOTES -->
-      <section class="feature-group container">
-        <div class="feature-block feature-block--reverse" id="feature-notes" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Capture</p>
-            <h3 style="font-size:32px;margin-top:12px;">Capture the thought before it disappears.</h3>
-            <p>Ideas often arrive while you're doing something else. Quick Notes gives them a place immediately, so you can capture a thought without breaking your flow.</p>
-            <ul class="feature-block__list">
-              <li>Add a note in seconds, from Home or Command Center</li>
-              <li>Color-code, pin, and tag notes for quick recall</li>
-              <li>Search recent notes without leaving the page you're on</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Notes</span></div>
-              <img src="assets/screens/notes-demo.gif" width="760" height="414" alt="Creating a new note in Notes" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CORE SHOWCASE: KNOWLEDGE VAULT -->
-      <section class="feature-group container">
-        <div class="feature-block" id="feature-vault" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Learn</p>
-            <h3 style="font-size:32px;margin-top:12px;">Don't just save information. Keep it useful.</h3>
-            <p>Save useful resources, organize them with context, and keep your learning material somewhere you can actually return to.</p>
-            <ul class="feature-block__list">
-              <li>Save notes, code, links, documents, and screenshots as one entry type</li>
-              <li>Organize with tags and search by title, content, or source</li>
-              <li>Keep the source link attached, so context isn't lost</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Knowledge Vault</span></div>
-              <img src="assets/screens/vault-demo.gif" width="760" height="339" alt="Searching entries in Knowledge Vault" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CORE SHOWCASE: READ LATER -->
-      <section class="feature-group container">
-        <div class="feature-block feature-block--reverse" id="feature-reader" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Save</p>
-            <h3 style="font-size:32px;margin-top:12px;">Save it now. Come back when you're ready.</h3>
-            <p>Interesting articles and resources don't always fit into the moment. Save them to your reading list instead of leaving them buried in tabs or scattered across bookmarks.</p>
-            <ul class="feature-block__list">
-              <li>Save the page title, source, and a short preview automatically</li>
-              <li>Track read and unread status, and reading progress</li>
-              <li>Open the saved page again whenever you're ready</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Reading Mode</span></div>
-              <img src="assets/screens/reader-annotate.webp" width="1600" height="1157" alt="Reading Mode with a passage highlighted and a comment being added" loading="lazy" decoding="async">
-            </div>
-            <div class="feature-callout">
-              <img src="assets/screens/readlater-demo.gif" width="760" height="206" alt="Filtering saved articles in Read Later" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CORE SHOWCASE: FOCUS -->
-      <section class="feature-group container">
-        <div class="feature-block" id="feature-focus" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Focus</p>
-            <h3 style="font-size:32px;margin-top:12px;">Give your attention somewhere to go.</h3>
-            <p>Start a focused work session without opening another timer. Keep the session close to your tasks and workspace, with distracting sites paused for the length of the session.</p>
-            <ul class="feature-block__list">
-              <li>Start, pause, and reset a Pomodoro session in one click</li>
-              <li>Choose a preset length or set a custom duration</li>
-              <li>Block distracting sites only while a session is running</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Focus</span></div>
-              <img src="assets/screens/focus-demo.gif" width="1100" height="773" alt="Focus timer counting down on the Focus Tab" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CORE SHOWCASE: CAREER / RESUME -->
-      <section class="feature-group container">
-        <div class="feature-block feature-block--reverse" id="feature-career" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Career</p>
-            <h3 style="font-size:32px;margin-top:12px;">Keep your career work organized too.</h3>
-            <p>Your career work doesn't live in one document. Keep resume versions, applications, and a shareable portfolio organized inside the same workspace as everything else.</p>
-            <ul class="feature-block__list">
-              <li>Keep multiple resume versions, in PDF and Word, with private notes</li>
-              <li>Track applications and interview stages with Job Tracker</li>
-              <li>Turn projects and resume work into a shareable Portfolio</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Resume Hub</span></div>
-              <img src="assets/screens/resume-demo.gif" width="760" height="337" alt="Opening a saved resume version in Resume Hub" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-        <div class="feature-block" id="feature-portfolio" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Present</p>
-            <h3 style="font-size:32px;margin-top:12px;">Turn saved work into a portfolio.</h3>
-            <p>A recruiter-ready presentation built directly from the projects and resume you already keep in Meisai, no separate site builder required.</p>
-            <ul class="feature-block__list">
-              <li>Pulls from your existing projects and resume automatically</li>
-              <li>Preview in light or dark before sharing</li>
-              <li>Export as a single self-contained HTML file</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Portfolio</span></div>
-              <img src="assets/screens/portfolio-demo.gif" width="780" height="446" alt="Switching to the Projects tab of a portfolio site" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-block feature-block--reverse" id="feature-jobs" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Track</p>
-            <h3 style="font-size:32px;margin-top:12px;">Never lose track of an application.</h3>
-            <p>Move applications through wishlist, applied, interview, and offer, with interview stage, round, and result tracked in the same card, next to the resume version you sent.</p>
-            <ul class="feature-block__list">
-              <li>A clear pipeline from wishlist to offer</li>
-              <li>Interview stage, mode, and result in one place</li>
-              <li>Linked directly to the resume version you sent</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Job Tracker</span></div>
-              <img src="assets/screens/jobs-demo.gif" width="760" height="306" alt="Adding a new application to the Job Tracker" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-block" id="feature-linkedin" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Write</p>
-            <h3 style="font-size:32px;margin-top:12px;">Write LinkedIn posts that actually look formatted.</h3>
-            <p>Write with real bold, italic, and list styling using Unicode text formatting, preview it exactly as it will look on LinkedIn, and copy the finished result, with links, mentions, and hashtags protected so formatting never breaks them.</p>
-            <ul class="feature-block__list">
-              <li>Desktop, mobile, and collapsed-view preview modes</li>
-              <li>Save named drafts and reopen them later</li>
-              <li>An emoji picker and image attachment for the preview</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>LinkedIn Text Formatter</span></div>
-              <img src="assets/screens/linkedin-demo.gif" width="780" height="435" alt="Typing a LinkedIn post with a live formatted preview" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-block feature-block--reverse" id="feature-fill-info" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Fill Info</p>
-            <h3 style="font-size:32px;margin-top:12px;">Stop retyping the same details.</h3>
-            <p>Save your details once in Portfolio, then let Meisai match compatible fields on a form you're filling out. You review and confirm every value before anything is entered, so it never submits on its own.</p>
-            <ul class="feature-block__list">
-              <li>Matches only the fields it recognizes on the page</li>
-              <li>Every value is shown for review before it's filled</li>
-              <li>Never submits a form automatically</li>
-            </ul>
-          </div>
-          <div class="feature-block__media feature-block__media--icon">
-            <div class="icon-panel">
-              <span class="icon-panel__glyph" aria-hidden="true">&#9998;</span>
-              <div class="icon-panel__rows">
-                <div class="icon-panel__row"><span></span><i></i></div>
-                <div class="icon-panel__row"><span></span><i></i></div>
-                <div class="icon-panel__row is-short"><span></span><i></i></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ CUSTOM WORKSPACE -->
-      <section class="feature-group container">
-        <div class="feature-block" id="feature-customize" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Customize</p>
-            <h3 style="font-size:32px;margin-top:12px;">Make the workspace yours.</h3>
-            <p>Not everyone works the same way. Resize widgets, rearrange them, and decide what stays visible. Meisai adapts to your workflow instead of forcing you into one layout.</p>
-            <ul class="feature-block__list">
-              <li>Drag cards into the order you want</li>
-              <li>Resize the widgets you use most, hide the rest</li>
-              <li>Restore the default layout any time, without losing data</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Customize Dashboard</span></div>
-              <img src="assets/screens/customize-demo.gif" width="900" height="499" alt="Resizing a dashboard widget to large" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-
-        <div class="feature-block feature-block--reverse" id="feature-appearance" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Personalize</p>
-            <h3 style="font-size:32px;margin-top:12px;">Customize your workspace.</h3>
-            <p>Personalize your workspace with themes, wallpaper, and other options built just for you.</p>
-            <ul class="feature-block__list">
-              <li>Curated preset themes, or mix any theme with any wallpaper</li>
-              <li>Applies consistently across Home, the workspace, and Reading Mode</li>
-              <li>Switch any time, your data and layout stay exactly as you left them</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Settings · Appearance</span></div>
-              <img src="assets/screens/appearance-demo.gif" width="780" height="497" alt="Switching themes and wallpaper in Appearance settings" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ COMMAND CENTER -->
-      <section class="feature-group container">
-        <div class="feature-block feature-block--reverse" id="feature-command" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Navigate</p>
-            <h3 style="font-size:32px;margin-top:12px;">When you know what you want, just type it.</h3>
-            <p>Open Command Center and search, create, or navigate without hunting through menus. It's one command away from the rest of your workspace, built for speed rather than conversation.</p>
-            <ul class="feature-block__list">
-              <li>Ctrl/Cmd + K opens it from anywhere in Meisai</li>
-              <li>Type <code>/task</code>, <code>/note</code>, or <code>/brain</code> to create instantly</li>
-              <li>Start typing to search everything you've saved</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Command Center</span></div>
-              <img src="assets/screens/command-demo.gif" width="1100" height="773" alt="Focusing the Command Center search bar" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- ================================================================ WEB COMFORT -->
-      <section class="feature-group container">
-        <div class="feature-block" id="feature-webcomfort" data-reveal>
-          <div class="feature-block__copy">
-            <p class="eyebrow">Read comfortably</p>
-            <h3 style="font-size:32px;margin-top:12px;">Make any webpage feel like yours.</h3>
-            <p>Every site has its own idea of readable. Web Comfort applies one calm, consistent theme across the pages you visit and clears away ads, pop-ups, and sticky banners, so long reading sessions stay comfortable without you adjusting every website by hand.</p>
-            <ul class="feature-block__list">
-              <li>Nine color themes and nine fonts, from Day and Sepia to Grey, Sage, and Mint</li>
-              <li>Distraction Free hides common ads, pop-ups, and sticky promos</li>
-              <li>Applies instantly, no reload, and remembers your choice per site or everywhere</li>
-            </ul>
-          </div>
-          <div class="feature-block__media">
-            <div class="window">
-              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Web Comfort</span></div>
-              <img src="assets/screens/web-comfort-demo.gif" width="850" height="547" alt="Web Comfort cycling a webpage through Day, Night, Sepia, Twilight, and AMOLED themes while hiding ads and a newsletter popup" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ AVAILABLE EVERYWHERE -->
-      <section class="tab-tools">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-       
-            <h2>Your workspace doesn't stop at the new tab</h2>
-            <p>Use Meisai from a webpage or the browser toolbar. Capture information, organize tabs, and start focused work without returning to the full workspace.</p>
-          </div>
-
-          <div class="panel-pair">
-            <div class="panel-card" id="feature-helper" data-reveal>
-              <div class="panel-card__media">
-                <div class="window">
-                  <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Meisai Helper</span></div>
-                  <img src="assets/screens/helper-panel.webp" width="1000" height="1031" alt="Meisai Helper expanded panel with Fill Info, Notes, Reading Mode, Save to Vault, Save to Read Later, Group Tab, Workspace, and Pinned tabs" loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="panel-card__body">
-                <p class="eyebrow eyebrow--on-navy">Page-edge access</p>
-                <h3>Meisai Helper</h3>
-                <p>A movable, auto-hiding toolbar for reading, capture, form filling, pinned tabs, Group Tabs, and Workspaces on supported webpages.</p>
-              </div>
-            </div>
-            <div class="panel-card" id="feature-popup" data-reveal>
-              <div class="panel-card__media">
-                <div class="window">
-                  <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Meisai popup</span></div>
-                  <img src="assets/screens/popup-demo.gif" width="420" height="720" alt="Starting Focus Mode from the pinned extension popup" loading="lazy" decoding="async">
-                </div>
-              </div>
-              <div class="panel-card__body">
-                <p class="eyebrow eyebrow--on-navy">One-click control</p>
-                <h3>Pinned extension</h3>
-                <p>Add a task or note inline, run quick actions, control Focus Mode, and open key destinations from a compact browser popup.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tab-tools__grid">
-            <div class="tab-tools__item" data-reveal>
-              <span class="tab-tools__num">01</span>
-              <h3>Pinned tabs</h3>
-              <p>Keep visual shortcuts to the sites you use most. Edit names or URLs and open them from every Meisai surface.</p>
-            </div>
-            <div class="tab-tools__item" data-reveal>
-              <span class="tab-tools__num">02</span>
-              <h3>Group Tabs</h3>
-              <p>Save a named, colored set of related pages. Reopen it, add the current tab, edit it, or turn it into individual pins.</p>
-            </div>
-            <div class="tab-tools__item" data-reveal>
-              <span class="tab-tools__num">03</span>
-              <h3>Workspaces</h3>
-              <p>Build a reusable browsing context with selected tabs, a name, color, icon, or emoji, then open it in its own window.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ WHY MEISAI -->
-      <section class="section" id="pillars">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            <p class="eyebrow">Why Meisai</p>
-            <h2>Built around how you actually work</h2>
-          </div>
-          <div class="problem-grid">
-            <article class="problem-card" data-reveal>
-              <h3>Personal</h3>
-              <p>Shape the workspace around the way you work, not the other way around.</p>
-            </article>
-            <article class="problem-card" data-reveal>
-              <h3>Connected</h3>
-              <p>Keep the tools and information you use together, in one place.</p>
-            </article>
-            <article class="problem-card" data-reveal>
-              <h3>Calm</h3>
-              <p>Reduce unnecessary switching without turning your workspace into another source of noise.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ PRIVACY / LOCAL-FIRST -->
-      <section class="privacy-section" id="privacy">
-        <div class="container privacy-grid">
-          <div class="section-heading" data-reveal>
-            <p class="eyebrow eyebrow--on-navy">Privacy &amp; data</p>
-            <h2>Your workspace starts with you</h2>
-            <p>Meisai currently keeps your workspace data local to your device. There is no cloud account required for the core local experience.</p>
-          </div>
-          <div class="privacy-list">
-            <div class="privacy-item" data-reveal>
-              <span class="icon" aria-hidden="true">◆</span>
-              <div><h3>Local by default</h3><p>Tasks, notes, knowledge, and career records are stored in your browser's local storage. Nothing is synced to a server today.</p></div>
-            </div>
-            <div class="privacy-item" data-reveal>
-              <span class="icon" aria-hidden="true">◆</span>
-              <div><h3>No account for the core experience</h3><p>Core features work without signing up or creating an account.</p></div>
-            </div>
-            <div class="privacy-item" data-reveal>
-              <span class="icon" aria-hidden="true">◆</span>
-              <div><h3>Cloud sync is planned</h3><p>A future version is planned to let you access your workspace across devices, once it's ready.</p></div>
-            </div>
-            <div class="privacy-item" data-reveal>
-              <span class="icon" aria-hidden="true">◆</span>
-              <div><h3>Permissions used for what they say</h3><p>Storage for your content, alarms for the focus timer, and site access only to run Meisai's tools. See the full list in our <a href="privacy.html" style="color:#6ee7c4;">privacy policy</a>.</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ WHO IT'S FOR -->
-      <section class="section" id="audience">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            <p class="eyebrow">Who Meisai is for</p>
-            <h2>Built for how different people already work</h2>
-          </div>
-          <div class="persona-grid">
-            <article class="persona-card" data-reveal>
-              <h3>Students</h3>
-              <p>Keep learning resources, notes, tasks, and focus together.</p>
-            </article>
-            <article class="persona-card" data-reveal>
-              <h3>Professionals</h3>
-              <p>Keep daily work, knowledge, and personal organization close at hand.</p>
-            </article>
-            <article class="persona-card" data-reveal>
-              <h3>Developers</h3>
-              <p>Capture documentation, tasks, ideas, and learning resources.</p>
-            </article>
-            <article class="persona-card" data-reveal>
-              <h3>Job seekers</h3>
-              <p>Organize resumes and career resources alongside daily work.</p>
-            </article>
-            <article class="persona-card" data-reveal>
-              <h3>Lifelong learners</h3>
-              <p>Turn saved resources into an organized personal knowledge space.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ HELP & SUPPORT -->
-      <section class="section section--tight" id="help">
-        <div class="container">
-          <div class="section-heading section-heading--center" data-reveal>
-            
-            <h2>Help & Support</h2>
-            
-          </div>
-          <div class="support-grid">
-            <div class="support-card" data-reveal>
-              <h3>Troubleshooting</h3>
-              <p>Fixes for a local data error, a missing Meisai Helper, screenshot capture, website blocking, and notifications.</p>
-              <a href="support.html#troubleshooting">Read troubleshooting steps →</a>
-            </div>
-            <div class="support-card" data-reveal>
-              <h3>Permissions</h3>
-              <p>A plain-language breakdown of every browser permission Meisai requests and exactly what each one is used for.</p>
-              <a href="support.html#permissions">See why each permission is used →</a>
-            </div>
-            <div class="support-card" data-reveal>
-              <h3>Backup &amp; restore</h3>
-              <p>Export everything or a single area as JSON, then restore it later in merge or replace mode on any device.</p>
-              <a href="support.html#backup">Learn how backup works →</a>
-            </div>
-            <div class="support-card" data-reveal>
-              <h3>FAQ</h3>
-              <p>Quick answers on pricing, data storage, accounts, sync, and customizing the workspace.</p>
-              <a href="support.html#faq">Browse frequently asked questions →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================================================================ FINAL CTA -->
-      <section class="section section--tight" id="get-meisai">
-        <div class="container">
-          <div class="final-cta" data-reveal>
-            <p class="eyebrow eyebrow--on-navy"></p>
-            <h2>Make your browser work a little more like you do.</h2>
-            <p></p>
-            <div class="store-row">
-              <a class="button button--store" href="__FIREFOX_STORE_URL__">Add to Firefox</a>
-              <a class="button button--store" href="__EDGE_STORE_URL__">Add to Edge</a>
-              <!--IF_CHROME--><a class="button button--store" href="__CHROME_STORE_URL__">Add to Chrome</a><!--/IF_CHROME-->
-              <!--IF_BRAVE--><a class="button button--store" href="__BRAVE_STORE_URL__">Add to Brave</a><!--/IF_BRAVE-->
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
+    <!-- ================================================================ STATUS BAR -->
+    <div class="status-bar">
       <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a class="brand" href="./" aria-label="Meisai home">
-              <img src="assets/meisai-logo.png" width="32" height="32" alt="">
-              <span>Meisai</span>
-            </a>
-            <p>One calm workspace for work, learning, focus, and personal organization.</p>
-          </div>
-          <div class="footer-col">
-            <h3>Product</h3>
-            <a href="#feature-tasks">Features</a>
-            <a href="#feature-command">Command Center</a>
-            <a href="#feature-vault">Knowledge Vault</a>
-            <a href="#feature-career">Resume Vault</a>
-          </div>
-          <div class="footer-col">
-            <h3>Resources</h3>
-            <a href="support.html">Help</a>
-            <a href="support.html#faq">FAQ</a>
-            <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Feedback</a>
-            <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Contact</a>
-            <a href="https://github.com/Ankit-Anshu/meisai-website/issues" target="_blank" rel="noopener noreferrer">Report issue</a>
-          </div>
-          <div class="footer-col">
-            <h3>Legal</h3>
-            <a href="privacy.html">Privacy</a>
-            <a href="support.html">Support</a>
-          </div>
+
+      </div>
+    </div>
+
+    <!-- ================================================================ PRODUCT DEMO -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">See it in action</p>
+          <h2>Everything Meisai brings together</h2>
         </div>
-        <div class="footer-bottom">
-          <span>© <span data-current-year></span> Meisai. All rights reserved.</span>
-          <span>Local by default, no accounts, no trackers.</span>
+        <div class="deck" data-deck aria-label="Meisai workspace walkthrough" data-reveal>
+          <div class="deck__stage" data-deck-stage>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="0"
+              data-deck-label="Open the workspace"><img src="assets/screens/home-dashboard.webp"
+                alt="Open the workspace" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="1"
+              data-deck-label="Add what matters today"><img src="assets/screens/tasks-demo.gif"
+                alt="Adding a task to Today's Tasks and checking it off" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="2"
+              data-deck-label="Plan a board, then block the time"><img src="assets/screens/tasks-board-demo.gif"
+                alt="Adding cards to the Meisai Tasks Kanban board and blocking time for them on Today's Schedule"
+                loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="3"
+              data-deck-label="Build a streak that shows itself"><img src="assets/screens/habits-demo.gif"
+                alt="Adding habits to the Habit Tracker and checking off days across the month" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="4"
+              data-deck-label="Catch a thought before it slips"><img src="assets/screens/notes-demo.gif"
+                alt="Creating a new note in Notes" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="5"
+              data-deck-label="Keep the page, not just the tab"><img src="assets/screens/readlater-demo.gif"
+                alt="Filtering saved articles in Read Later" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="6" data-deck-label="Open Vault"><img
+                src="assets/screens/vault-demo.gif" alt="Searching entries in Vault" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="7"
+              data-deck-label="Start a focus session"><img src="assets/screens/focus-demo.gif"
+                alt="Start a focus session" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="8"
+              data-deck-label="Keep resume versions ready"><img src="assets/screens/resume-demo.gif"
+                alt="Opening a saved resume version in Resume Hub" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="9"
+              data-deck-label="Track an application"><img src="assets/screens/jobs-demo.gif"
+                alt="Adding a new application to the Job Tracker" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="10"
+              data-deck-label="Write a LinkedIn post"><img src="assets/screens/linkedin-demo.gif"
+                alt="Typing a LinkedIn post with a live formatted preview" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="11"
+              data-deck-label="Rearrange widgets"><img src="assets/screens/customize-demo.gif"
+                alt="Resizing a dashboard widget to large" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="12"
+              data-deck-label="Open Command Center"><img src="assets/screens/command-demo.gif"
+                alt="Focusing the Command Center search bar" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="13"
+              data-deck-label="Follow you across the web"><img src="assets/screens/helper-panel.webp"
+                alt="Meisai Helper" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="14"
+              data-deck-label="Reach for the pinned popup"><img src="assets/screens/popup-demo.gif"
+                alt="Starting Focus Mode from the pinned extension popup" loading="lazy"></button>
+            <button class="deck__card" type="button" data-deck-card data-deck-go="15"
+              data-deck-label="Theme any page, clear the clutter"><img src="assets/screens/web-comfort-demo.gif"
+                alt="Web Comfort cycling a webpage through Day, Night, Sepia, Twilight, and AMOLED themes while hiding ads and a newsletter popup"
+                loading="lazy"></button>
+          </div>
+          <p class="deck__caption"><span data-deck-index>01</span><span data-deck-caption>Open the workspace</span></p>
+          <div class="deck__controls">
+            <button class="deck__nav" type="button" data-deck-prev aria-label="Previous">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="deck__play" type="button" data-deck-play aria-label="Pause autoplay" aria-pressed="true">
+              <svg data-deck-icon-pause width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <rect x="2" y="1.5" width="2.6" height="9" rx="1" fill="currentColor" />
+                <rect x="7.4" y="1.5" width="2.6" height="9" rx="1" fill="currentColor" />
+              </svg>
+              <svg data-deck-icon-play width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" hidden>
+                <path d="M2.5 1.5l7 4.5-7 4.5v-9z" fill="currentColor" />
+              </svg>
+            </button>
+            <button class="deck__nav" type="button" data-deck-next aria-label="Next">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- ================================================================ YOUR BROWSER ALREADY DOES A LOT -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">Why Meisai exists</p>
+          <h2>Your browser helps you browse. Your day needs more than browsing.</h2>
+          <p>Your work, learning, ideas, reading, tasks, and career resources are scattered across different tools.
+            Meisai brings them closer together by adding a personal workspace to the browser you already use, so
+            everything you need throughout the day is right where you need it.</p>
+        </div>
+        <div class="equation" data-reveal>
+          <div class="equation__item">
+            <strong>Browser</strong>
+            <p>Web · Tabs · Bookmarks · History</p>
+          </div>
+          <div class="equation__op" aria-hidden="true">+</div>
+          <div class="equation__item">
+            <strong>Meisai</strong>
+            <p>Tasks · Notes · Knowledge · Reading · Focus · Career</p>
+          </div>
+          <div class="equation__op" aria-hidden="true">=</div>
+          <div class="equation__item equation__item--result">
+            <strong>One workspace</strong>
+            <p>Everything closer to where the work already happens.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ HOW MEISAI FITS -->
+    <section class="section section--tight" id="workflow">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">How Meisai fits</p>
+          <h2>Keep the browser you love. Add the workspace you need.</h2>
+        </div>
+        <div class="steps">
+          <div class="step" data-reveal>
+            <h3>Browse</h3>
+            <p>Use your existing browser normally. Meisai doesn't change how you browse the web.</p>
+          </div>
+          <div class="step" data-reveal>
+            <h3>Capture</h3>
+            <p>Save tasks, notes, pages, ideas, and knowledge while you work, right where you already are.</p>
+          </div>
+          <div class="step" data-reveal>
+            <h3>Organize</h3>
+            <p>Bring those pieces into one customizable workspace you can shape around yourself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CAPABILITIES -->
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <h2>Everything inside the workspace</h2>
+          <p>A closer look at what's already built, grouped the way you'd actually reach for it.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card" data-reveal>
+            <span class="capability-card__num">01</span>
+            <h3>Plan and focus</h3>
+            <ul>
+              <li>Today's Focus</li>
+              <li>Tasks and Upcoming</li>
+              <li>Meisai Tasks board and time blocking</li>
+              <li>Calendar and countdowns</li>
+              <li>Monthly Habit Tracker</li>
+              <li>Wellness tracking and streaks</li>
+              <li>Pomodoro and Focus Tab</li>
+              <li>Website blocking</li>
+              <li>Notifications</li>
+            </ul>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span class="capability-card__num">02</span>
+            <h3>Capture and read</h3>
+            <ul>
+              <li>Notes and Quick Note</li>
+              <li>Brain Dump</li>
+              <li>Vault</li>
+              <li>Save to Vault</li>
+              <li>Read Later</li>
+              <li>Reading Mode</li>
+              <li>Highlights and comments</li>
+            </ul>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span class="capability-card__num">03</span>
+            <h3>Learn and build</h3>
+            <ul>
+              <li>Resource Hub</li>
+              <li>Built-in roadmap paths</li>
+              <li>Custom roadmaps</li>
+              <li>Saved learning resources</li>
+              <li>Project Tracker</li>
+              <li>Personal Kanban</li>
+              <li>LinkedIn Formatter and drafts</li>
+            </ul>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span class="capability-card__num">04</span>
+            <h3>Career</h3>
+            <ul>
+              <li>Job Tracker</li>
+              <li>Interview stages</li>
+              <li>Resume versions</li>
+              <li>Application outcomes</li>
+              <li>Fill Info</li>
+            </ul>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span class="capability-card__num">05</span>
+            <h3>Navigate and organize</h3>
+            <ul>
+              <li>Universal Command Bar</li>
+              <li>Pinned extension</li>
+              <li>Meisai Helper</li>
+              <li>Pinned tabs</li>
+              <li>Group Tabs</li>
+              <li>Workspaces</li>
+              <li>Browser search suggestions</li>
+            </ul>
+          </article>
+          <article class="capability-card" data-reveal>
+            <span class="capability-card__num">06</span>
+            <h3>Make it yours</h3>
+            <ul>
+              <li>Resizable dashboard widgets</li>
+              <li>Show, hide, and reorder</li>
+              <li>Themes and wallpapers</li>
+              <li>Web Comfort page themes</li>
+              <li>Independent Focus presets</li>
+              <li>Sidebar display modes</li>
+              <li>Selective notifications</li>
+              <li>Backup and restore</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CORE SHOWCASE: TASKS -->
+    <section class="feature-group container">
+      <div class="feature-block" id="feature-tasks" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Plan</p>
+          <h3 style="font-size:32px;margin-top:12px;">Know what needs your attention.</h3>
+          <p>Keep your daily tasks close to the rest of your workspace. Capture what needs to be done, organize
+            priorities, and keep your day visible without opening another productivity app.</p>
+          <ul class="feature-block__list">
+            <li>Add a task, set a priority, and schedule a due date</li>
+            <li>Mark tasks complete without leaving the workspace</li>
+            <li>Add a task instantly from Command Center with /task</li>
+          </ul>
+        </div>
+        <div class="feature-block__media feature-block__media--compact">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Today's Tasks</span></div>
+            <img src="assets/screens/tasks-demo.gif" width="300" height="488"
+              alt="Adding a task to Today's Tasks and checking it off" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ NEW: MEISAI TASKS BOARD -->
+    <section class="feature-group container">
+      <div class="feature-block feature-block--reverse" id="feature-meisai-tasks" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">A board for real work</p>
+          <h3 style="font-size:32px;margin-top:12px;">Plan the day, not just the list.</h3>
+          <p>Meisai Tasks is a dedicated board for heavier work, with Backlog, To Do, In Progress, and Done columns, the
+            ABCDE priority method, and an hourly schedule for blocking time against what actually matters.</p>
+          <ul class="feature-block__list">
+            <li>Switch between a Kanban board and a grouped List, sorted by priority, status, or due date</li>
+            <li>Prioritize with ABCDE, then reorder every unfinished column by letter in one click</li>
+            <li>Block time on Today's Schedule straight from a card's menu, or find the next free gap automatically</li>
+            <li>Drag and drop, or move cards with the keyboard, and send any card to Home as today's focus</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Meisai Tasks</span></div>
+            <img src="assets/screens/tasks-board-demo.gif" width="900" height="625"
+              alt="Adding cards to the Meisai Tasks Kanban board and blocking time for them on Today's Schedule"
+              loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ NEW: HABIT TRACKER -->
+    <section class="feature-group container">
+      <div class="feature-block" id="feature-habits" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Habit tracker</p>
+          <h3 style="font-size:32px;margin-top:12px;">See the habits behind your progress.</h3>
+          <p>Track a full month in one place, understand your streaks, and keep everyday wellness beside the routines
+            that shape it. Habits stay connected across Home, Calendar, search, and the full tracker.</p>
+          <ul class="feature-block__list">
+            <li>Mark each day complete or skipped, with schedules and start dates respected</li>
+            <li>Filter by category and review completion, current streaks, best streaks, and weekly progress</li>
+            <li>Log water, sleep, steps, mood, or your own wellness metric</li>
+            <li>Set monthly goals, keep notes, and reflect on what worked</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Habit Tracker</span></div>
+            <img src="assets/screens/habits-demo.gif" width="900" height="625"
+              alt="Adding habits to the Habit Tracker and checking off days across the month" loading="lazy"
+              decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CORE SHOWCASE: NOTES -->
+    <section class="feature-group container">
+      <div class="feature-block feature-block--reverse" id="feature-notes" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Capture</p>
+          <h3 style="font-size:32px;margin-top:12px;">Capture the thought before it disappears.</h3>
+          <p>Ideas often arrive while you're doing something else. Quick Notes gives them a place immediately, so you
+            can capture a thought without breaking your flow.</p>
+          <ul class="feature-block__list">
+            <li>Add a note in seconds, from Home or Command Center</li>
+            <li>Color-code, pin, and tag notes for quick recall</li>
+            <li>Search recent notes without leaving the page you're on</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Notes</span></div>
+            <img src="assets/screens/notes-demo.gif" width="760" height="414" alt="Creating a new note in Notes"
+              loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CORE SHOWCASE: VAULT -->
+    <section class="feature-group container">
+      <div class="feature-block" id="feature-vault" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Learn</p>
+          <h3 style="font-size:32px;margin-top:12px;">Don't just save information. Keep it useful.</h3>
+          <p>Save useful resources, organize them with context, and keep your learning material somewhere you can
+            actually return to.</p>
+          <ul class="feature-block__list">
+            <li>Save notes, code, links, documents, and screenshots as one entry type</li>
+            <li>Organize with tags and search by title, content, or source</li>
+            <li>Keep the source link attached, so context isn't lost</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Vault</span></div>
+            <img src="assets/screens/vault-demo.gif" width="760" height="339" alt="Searching entries in Vault"
+              loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CORE SHOWCASE: READ LATER -->
+    <section class="feature-group container">
+      <div class="feature-block feature-block--reverse" id="feature-reader" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Save</p>
+          <h3 style="font-size:32px;margin-top:12px;">Save it now. Come back when you're ready.</h3>
+          <p>Interesting articles and resources don't always fit into the moment. Save them to your reading list instead
+            of leaving them buried in tabs or scattered across bookmarks.</p>
+          <ul class="feature-block__list">
+            <li>Save the page title, source, and a short preview automatically</li>
+            <li>Track read and unread status, and reading progress</li>
+            <li>Open the saved page again whenever you're ready</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Reading Mode</span></div>
+            <img src="assets/screens/reader-annotate.webp" width="1600" height="1157"
+              alt="Reading Mode with a passage highlighted and a comment being added" loading="lazy" decoding="async">
+          </div>
+          <div class="feature-callout">
+            <img src="assets/screens/readlater-demo.gif" width="760" height="206"
+              alt="Filtering saved articles in Read Later" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CORE SHOWCASE: FOCUS -->
+    <section class="feature-group container">
+      <div class="feature-block" id="feature-focus" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Focus</p>
+          <h3 style="font-size:32px;margin-top:12px;">Give your attention somewhere to go.</h3>
+          <p>Start a focused work session without opening another timer. Keep the session close to your tasks and
+            workspace, with distracting sites paused for the length of the session.</p>
+          <ul class="feature-block__list">
+            <li>Start, pause, and reset a Pomodoro session in one click</li>
+            <li>Choose a preset length or set a custom duration</li>
+            <li>Block distracting sites only while a session is running</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Focus</span></div>
+            <img src="assets/screens/focus-demo.gif" width="1100" height="773"
+              alt="Focus timer counting down on the Focus Tab" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CORE SHOWCASE: CAREER / RESUME -->
+    <section class="feature-group container">
+      <div class="feature-block feature-block--reverse" id="feature-career" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Career</p>
+          <h3 style="font-size:32px;margin-top:12px;">Keep your career work organized too.</h3>
+          <p>Your career work doesn't live in one document. Keep resume versions and applications organized inside the
+            same workspace as everything else.</p>
+          <ul class="feature-block__list">
+            <li>Keep multiple resume versions, in PDF and Word, with private notes</li>
+            <li>Track applications and interview stages with Job Tracker</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Resume Hub</span></div>
+            <img src="assets/screens/resume-demo.gif" width="760" height="337"
+              alt="Opening a saved resume version in Resume Hub" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+      <div class="feature-block" id="feature-jobs" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Track</p>
+          <h3 style="font-size:32px;margin-top:12px;">Never lose track of an application.</h3>
+          <p>Move applications through wishlist, applied, interview, and offer, with interview stage, round, and result
+            tracked in the same card, next to the resume version you sent.</p>
+          <ul class="feature-block__list">
+            <li>A clear pipeline from wishlist to offer</li>
+            <li>Interview stage, mode, and result in one place</li>
+            <li>Linked directly to the resume version you sent</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Job Tracker</span></div>
+            <img src="assets/screens/jobs-demo.gif" width="760" height="306"
+              alt="Adding a new application to the Job Tracker" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block feature-block--reverse" id="feature-linkedin" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Write</p>
+          <h3 style="font-size:32px;margin-top:12px;">Write LinkedIn posts that actually look formatted.</h3>
+          <p>Write with real bold, italic, and list styling using Unicode text formatting, preview it exactly as it will
+            look on LinkedIn, and copy the finished result, with links, mentions, and hashtags protected so formatting
+            never breaks them.</p>
+          <ul class="feature-block__list">
+            <li>Desktop, mobile, and collapsed-view preview modes</li>
+            <li>Save named drafts and reopen them later</li>
+            <li>An emoji picker and image attachment for the preview</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>LinkedIn Text Formatter</span></div>
+            <img src="assets/screens/linkedin-demo.gif" width="780" height="435"
+              alt="Typing a LinkedIn post with a live formatted preview" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="feature-fill-info" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Fill Info</p>
+          <h3 style="font-size:32px;margin-top:12px;">Stop retyping the same details.</h3>
+          <p>Save your details once, then let Meisai match compatible fields on a form you're filling out. You review
+            and confirm every value before anything is entered, so it never submits on its own.</p>
+          <ul class="feature-block__list">
+            <li>Matches only the fields it recognizes on the page</li>
+            <li>Every value is shown for review before it's filled</li>
+            <li>Never submits a form automatically</li>
+          </ul>
+        </div>
+        <div class="feature-block__media feature-block__media--icon">
+          <div class="icon-panel">
+            <span class="icon-panel__glyph" aria-hidden="true">&#9998;</span>
+            <div class="icon-panel__rows">
+              <div class="icon-panel__row"><span></span><i></i></div>
+              <div class="icon-panel__row"><span></span><i></i></div>
+              <div class="icon-panel__row is-short"><span></span><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ CUSTOM WORKSPACE -->
+    <section class="feature-group container">
+      <div class="feature-block" id="feature-customize" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Customize</p>
+          <h3 style="font-size:32px;margin-top:12px;">Make the workspace yours.</h3>
+          <p>Not everyone works the same way. Resize widgets, rearrange them, and decide what stays visible. Meisai
+            adapts to your workflow instead of forcing you into one layout.</p>
+          <ul class="feature-block__list">
+            <li>Drag cards into the order you want</li>
+            <li>Resize the widgets you use most, hide the rest</li>
+            <li>Restore the default layout any time, without losing data</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Customize Dashboard</span></div>
+            <img src="assets/screens/customize-demo.gif" width="900" height="499"
+              alt="Resizing a dashboard widget to large" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block feature-block--reverse" id="feature-appearance" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Personalize</p>
+          <h3 style="font-size:32px;margin-top:12px;">Customize your workspace.</h3>
+          <p>Personalize your workspace with themes, wallpaper, and other options built just for you.</p>
+          <ul class="feature-block__list">
+            <li>Curated preset themes, or mix any theme with any wallpaper</li>
+            <li>Applies consistently across Home, the workspace, and Reading Mode</li>
+            <li>Switch any time, your data and layout stay exactly as you left them</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Settings · Appearance</span></div>
+            <img src="assets/screens/appearance-demo.gif" width="780" height="497"
+              alt="Switching themes and wallpaper in Appearance settings" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ COMMAND CENTER -->
+    <section class="feature-group container">
+      <div class="feature-block feature-block--reverse" id="feature-command" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Navigate</p>
+          <h3 style="font-size:32px;margin-top:12px;">When you know what you want, just type it.</h3>
+          <p>Open Command Center and search, create, or navigate without hunting through menus. It's one command away
+            from the rest of your workspace, built for speed rather than conversation.</p>
+          <ul class="feature-block__list">
+            <li>Ctrl/Cmd + K opens it from anywhere in Meisai</li>
+            <li>Type <code>/task</code>, <code>/note</code>, or <code>/brain</code> to create instantly</li>
+            <li>Start typing to search everything you've saved</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Command Center</span></div>
+            <img src="assets/screens/command-demo.gif" width="1100" height="773"
+              alt="Focusing the Command Center search bar" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================================================================ WEB COMFORT -->
+    <section class="feature-group container">
+      <div class="feature-block" id="feature-webcomfort" data-reveal>
+        <div class="feature-block__copy">
+          <p class="eyebrow">Read comfortably</p>
+          <h3 style="font-size:32px;margin-top:12px;">Make any webpage feel like yours.</h3>
+          <p>Every site has its own idea of readable. Web Comfort applies one calm, consistent theme across the pages
+            you visit and clears away ads, pop-ups, and sticky banners, so long reading sessions stay comfortable
+            without you adjusting every website by hand.</p>
+          <ul class="feature-block__list">
+            <li>Nine color themes and nine fonts, from Day and Sepia to Grey, Sage, and Mint</li>
+            <li>Distraction Free hides common ads, pop-ups, and sticky promos</li>
+            <li>Applies instantly, no reload, and remembers your choice per site or everywhere</li>
+          </ul>
+        </div>
+        <div class="feature-block__media">
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Web Comfort</span></div>
+            <img src="assets/screens/web-comfort-demo.gif" width="850" height="547"
+              alt="Web Comfort cycling a webpage through Day, Night, Sepia, Twilight, and AMOLED themes while hiding ads and a newsletter popup"
+              loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ AVAILABLE EVERYWHERE -->
+    <section class="tab-tools">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+
+          <h2>Your workspace doesn't stop at the new tab</h2>
+          <p>Use Meisai from a webpage or the browser toolbar. Capture information, organize tabs, and start focused
+            work without returning to the full workspace.</p>
+        </div>
+
+        <div class="panel-pair">
+          <div class="panel-card" id="feature-helper" data-reveal>
+            <div class="panel-card__media">
+              <div class="window">
+                <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Meisai Helper</span></div>
+                <img src="assets/screens/helper-panel.webp" width="1000" height="1031"
+                  alt="Meisai Helper expanded panel with Fill Info, Notes, Reading Mode, Save to Vault, Save to Read Later, Group Tab, Workspace, and Pinned tabs"
+                  loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="panel-card__body">
+              <p class="eyebrow eyebrow--on-navy">Page-edge access</p>
+              <h3>Meisai Helper</h3>
+              <p>A movable, auto-hiding toolbar for reading, capture, form filling, pinned tabs, Group Tabs, and
+                Workspaces on supported webpages.</p>
+            </div>
+          </div>
+          <div class="panel-card" id="feature-popup" data-reveal>
+            <div class="panel-card__media">
+              <div class="window">
+                <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Meisai popup</span></div>
+                <img src="assets/screens/popup-demo.gif" width="420" height="720"
+                  alt="Starting Focus Mode from the pinned extension popup" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="panel-card__body">
+              <p class="eyebrow eyebrow--on-navy">One-click control</p>
+              <h3>Pinned extension</h3>
+              <p>Add a task or note inline, run quick actions, control Focus Mode, and open key destinations from a
+                compact browser popup.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-tools__grid">
+          <div class="tab-tools__item" data-reveal>
+            <span class="tab-tools__num">01</span>
+            <h3>Pinned tabs</h3>
+            <p>Keep visual shortcuts to the sites you use most. Edit names or URLs and open them from every Meisai
+              surface.</p>
+          </div>
+          <div class="tab-tools__item" data-reveal>
+            <span class="tab-tools__num">02</span>
+            <h3>Group Tabs</h3>
+            <p>Save a named, colored set of related pages. Reopen it, add the current tab, edit it, or turn it into
+              individual pins.</p>
+          </div>
+          <div class="tab-tools__item" data-reveal>
+            <span class="tab-tools__num">03</span>
+            <h3>Workspaces</h3>
+            <p>Build a reusable browsing context with selected tabs, a name, color, icon, or emoji, then open it in its
+              own window.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ WHY MEISAI -->
+    <section class="section" id="pillars">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">Why Meisai</p>
+          <h2>Built around how you actually work</h2>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card" data-reveal>
+            <h3>Personal</h3>
+            <p>Shape the workspace around the way you work, not the other way around.</p>
+          </article>
+          <article class="problem-card" data-reveal>
+            <h3>Connected</h3>
+            <p>Keep the tools and information you use together, in one place.</p>
+          </article>
+          <article class="problem-card" data-reveal>
+            <h3>Calm</h3>
+            <p>Reduce unnecessary switching without turning your workspace into another source of noise.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ PRIVACY / LOCAL-FIRST -->
+    <section class="privacy-section" id="privacy">
+      <div class="container privacy-grid">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow eyebrow--on-navy">Privacy &amp; data</p>
+          <h2>Your workspace starts with you</h2>
+          <p>Meisai currently keeps your workspace data local to your device. There is no cloud account required for the
+            core local experience.</p>
+        </div>
+        <div class="privacy-list">
+          <div class="privacy-item" data-reveal>
+            <span class="icon" aria-hidden="true">◆</span>
+            <div>
+              <h3>Local by default</h3>
+              <p>Tasks, notes, knowledge, and career records are stored in your browser's local storage. Nothing is
+                synced to a server today.</p>
+            </div>
+          </div>
+          <div class="privacy-item" data-reveal>
+            <span class="icon" aria-hidden="true">◆</span>
+            <div>
+              <h3>No account for the core experience</h3>
+              <p>Core features work without signing up or creating an account.</p>
+            </div>
+          </div>
+          <div class="privacy-item" data-reveal>
+            <span class="icon" aria-hidden="true">◆</span>
+            <div>
+              <h3>Cloud sync is planned</h3>
+              <p>A future version is planned to let you access your workspace across devices, once it's ready.</p>
+            </div>
+          </div>
+          <div class="privacy-item" data-reveal>
+            <span class="icon" aria-hidden="true">◆</span>
+            <div>
+              <h3>Permissions used for what they say</h3>
+              <p>Storage for your content, alarms for the focus timer, and site access only to run Meisai's tools. See
+                the full list in our <a href="privacy.html" style="color:#6ee7c4;">privacy policy</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ WHO IT'S FOR -->
+    <section class="section" id="audience">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">Who Meisai is for</p>
+          <h2>Built for how different people already work</h2>
+        </div>
+        <div class="persona-grid">
+          <article class="persona-card" data-reveal>
+            <h3>Students</h3>
+            <p>Keep learning resources, notes, tasks, and focus together.</p>
+          </article>
+          <article class="persona-card" data-reveal>
+            <h3>Professionals</h3>
+            <p>Keep daily work, knowledge, and personal organization close at hand.</p>
+          </article>
+          <article class="persona-card" data-reveal>
+            <h3>Developers</h3>
+            <p>Capture documentation, tasks, ideas, and learning resources.</p>
+          </article>
+          <article class="persona-card" data-reveal>
+            <h3>Job seekers</h3>
+            <p>Organize resumes and career resources alongside daily work.</p>
+          </article>
+          <article class="persona-card" data-reveal>
+            <h3>Lifelong learners</h3>
+            <p>Turn saved resources into an organized personal knowledge space.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ HELP & SUPPORT -->
+    <section class="section section--tight" id="help">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+
+          <h2>Help & Support</h2>
+
+        </div>
+        <div class="support-grid">
+          <div class="support-card" data-reveal>
+            <h3>Troubleshooting</h3>
+            <p>Fixes for a local data error, a missing Meisai Helper, screenshot capture, website blocking, and
+              notifications.</p>
+            <a href="support.html#troubleshooting">Read troubleshooting steps →</a>
+          </div>
+          <div class="support-card" data-reveal>
+            <h3>Permissions</h3>
+            <p>A plain-language breakdown of every browser permission Meisai requests and exactly what each one is used
+              for.</p>
+            <a href="support.html#permissions">See why each permission is used →</a>
+          </div>
+          <div class="support-card" data-reveal>
+            <h3>Backup &amp; restore</h3>
+            <p>Export everything or a single area as JSON, then restore it later in merge or replace mode on any device.
+            </p>
+            <a href="support.html#backup">Learn how backup works →</a>
+          </div>
+          <div class="support-card" data-reveal>
+            <h3>FAQ</h3>
+            <p>Quick answers on pricing, data storage, accounts, sync, and customizing the workspace.</p>
+            <a href="support.html#faq">Browse frequently asked questions →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ FINAL CTA -->
+    <section class="section section--tight" id="get-meisai">
+      <div class="container">
+        <div class="final-cta" data-reveal>
+          <p class="eyebrow eyebrow--on-navy"></p>
+          <h2>Make your browser work a little more like you do.</h2>
+          <p></p>
+          <div class="store-row">
+            <a class="button button--store" href="__FIREFOX_STORE_URL__">Add to Firefox</a>
+            <a class="button button--store" href="__EDGE_STORE_URL__">Add to Edge</a>
+            <!--IF_CHROME--><a class="button button--store" href="__CHROME_STORE_URL__">Add to
+              Chrome</a><!--/IF_CHROME-->
+            <!--IF_BRAVE--><a class="button button--store" href="__BRAVE_STORE_URL__">Add to Brave</a><!--/IF_BRAVE-->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="./" aria-label="Meisai home">
+            <img src="assets/meisai-logo.png" width="32" height="32" alt="">
+            <span>Meisai</span>
+          </a>
+          <p>One calm workspace for work, learning, focus, and personal organization.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Product</h3>
+          <a href="#feature-tasks">Features</a>
+          <a href="#feature-command">Command Center</a>
+          <a href="#feature-vault">Vault</a>
+          <a href="#feature-career">Resume Vault</a>
+        </div>
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <a href="support.html">Help</a>
+          <a href="support.html#faq">FAQ</a>
+          <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Feedback</a>
+          <a href="__FEEDBACK_URL__" target="_blank" rel="noopener noreferrer">Contact</a>
+          <a href="https://github.com/Ankit-Anshu/meisai-website/issues" target="_blank"
+            rel="noopener noreferrer">Report issue</a>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <a href="privacy.html">Privacy</a>
+          <a href="support.html">Support</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-current-year></span> Meisai. All rights reserved.</span>
+        <span>Local by default, no accounts, no trackers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

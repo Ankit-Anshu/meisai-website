@@ -1155,6 +1155,7 @@ h3 { font-size: 22px; line-height: 1.3; letter-spacing: -0.01em; }
 .prose .updated { color: var(--ink-faint); font-size: 13.5px; margin-bottom: 8px; }
 
 .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+
 .support-card {
   background: var(--paper);
   border: 1px solid var(--line);
